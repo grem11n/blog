@@ -8,26 +8,14 @@ googleAnalytics = ""
 [params]
   style = "default"
   pages = false
-  description = "Describe your website"
-  copyright = "&copy;2016 Your name or company"
+  description = "Yurii's Blog"
+  copyright = "&copy;2019 Yurii Rochniak"
   sidebarAbout = [
-    "I am a creative illustrator and graphic designer with more than 10 years of experience.",
-    "Originally from Toronto, currently based in London."
+    "I am an SRE with the Cloud experience. Passionate about the CICD related things."
+    "Originally from Kyiv, currently based in Berlin."
   ]
 
-  # Contact page
-     # Since this template is static, the contact form uses www.formspree.io as a
-     # proxy. The form makes a POST request to their servers to send the actual
-     # email. Visitors can send up to a 1000 emails each month for free.
-     #
-     # What you need to do for the setup?
-     #
-     # - set your email address under 'email' below
-     # - upload the generated site to your server
-     # - send a dummy email yourself to confirm your account
-     # - click the confirm link in the email from www.formspree.io
-     # - you're done. Happy mailing!
-  email = "you@yoursite.com"
+  email = "yrochnyak@gmail.com"
 
   # Nav links in the side bar
   [[params.navlinks]]
@@ -43,9 +31,9 @@ googleAnalytics = ""
   url = "contact/"
 
   [params.social]
-  telegram = "link to tg"
-  email         = "email@example.com"
-  twitter       = "full profile url in twitter"
-  linkedin      = "full profile url in linkedin"
-  stackoverflow = "full profile url in stackoverflow"
-  github = "full profile url in github"
+  telegram      = "https://t.me/catops"
+  email         = "yrochnyak@gmail.com"
+  twitter       = "https://twitter.com/grem11n"
+  linkedin      = "https://www.linkedin.com/in/yrochnyak/"
+  stackoverflow = "https://stackoverflow.com/users/6099033/yurii-rochniak?tab=profile"
+  github        = "https://github.com/grem11n"
