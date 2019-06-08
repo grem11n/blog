@@ -1,0 +1,18 @@
+/* your styles go here */
+img {
+  display: block;
+  max-width: 100%;
+
+  &.left {
+    margin-right: auto;
+  }
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.right {
+    margin-left: auto;
+  }
+}
