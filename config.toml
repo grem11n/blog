@@ -11,7 +11,7 @@ googleAnalytics = ""
   description = "Yurii's Blog"
   copyright = "&copy;2019 Yurii Rochniak"
   sidebarAbout = [
-    "I am an SRE with the Cloud experience. Passionate about the CICD related things."
+    "I am an SRE with the Cloud experience. Passionate about the CICD related things.",
     "Originally from Kyiv, currently based in Berlin."
   ]
 
