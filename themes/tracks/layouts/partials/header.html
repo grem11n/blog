@@ -6,11 +6,9 @@
   </div>
   <div class="col-md-6">
     <div class="menu">
-      <a href="{{ .Site.BaseURL }}">Home /</a>
-      {{ range $name, $taxonomy := .Site.Sections }}
-      {{ if ne $name "posts" }}
-      <a href="/{{ $name | urlize }}">{{ $name }} / </a>
-      {{ end }}
+      <a href="{{ .Site.BaseURL }}">All /</a>
+      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+      <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }} /</a>
       {{ end }}
     </div>
   </div>

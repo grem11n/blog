@@ -9,18 +9,20 @@
 </div>
 <div class="row">
   <div class="col-md-12 footer-menu">
-      <a href="/">Home /</a>
-      {{ range $name, $taxonomy := .Site.Sections }}
-      {{ if ne $name "post" }}
-      <a href="/{{ $name | urlize }}">{{ $name }} / </a>
-      {{ end }}
-      {{ end }}
-
+    <a href="{{ .Site.BaseURL }}">All /</a>
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+    <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }} /</a>
+    {{ end }}
   </div>
 </div>
-<div class="row">
+<div class="row" style="font-size: 35px;">
   <div class="col-sm-12">
     <div class="social-media-block-footer">
+      {{ with .Site.Params.social.telegram }}
+      <a href="{{ . }}" data-animate-hover="pulse" class="external telegram">
+        <i class='fa fa-telegram'></i>
+      </a>
+      {{end}}
       {{ with .Site.Params.social.facebook }}
       <a href="{{ . }}" data-animate-hover="pulse" class="external facebook">
         <i class="fa fa-facebook"></i>

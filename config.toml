@@ -1,13 +1,9 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Grem1in's Blog"
+title = "Yurii's Blog"
 theme = "tracks"
 disqusShortname = "grem1in"
 googleAnalytics = ""
-
-[taxonomies]
-   tag = "tags"
-   category = "categories"
 
 [params]
   style = "default"

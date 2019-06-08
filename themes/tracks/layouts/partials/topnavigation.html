@@ -2,8 +2,9 @@
   <div class="col-sm-6">
     <div class="categories-block">
       <a href="{{ .Site.BaseURL }}" class="track-categories">//</a>
-      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-      <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+      {{ $url := .Site.BaseURL }}
+      {{ range .Site.Params.navlinks }}
+        <a href="{{ $url }}{{ .url }}">{{ .name }}</a>
       {{ end }}
     </div>
   </div>
@@ -11,6 +12,11 @@
   <div class="col-sm-6">
     <div class="social-media-block">
 
+      {{ with .Site.Params.social.telegram }}
+      <a href="{{ . }}" data-animate-hover="pulse" class="external telegram">
+        <i class='fa fa-telegram'></i>
+      </a>
+      {{end}}
       {{ with .Site.Params.social.facebook }}
       <a href="{{ . }}" data-animate-hover="pulse" class="external facebook">
         <i class="fa fa-facebook"></i>
@@ -29,11 +35,6 @@
       {{ with .Site.Params.social.instagram }}
       <a href="{{ . }}" title="" class="external instagram">
         <i class="fa fa-instagram"></i>
-      </a>
-      {{end}}
-      {{ with .Site.Params.social.telegram }}
-      <a href="{{ . }}" data-animate-hover="pulse" class="external telegram">
-        <i class='fa fa-telegram'></i>
       </a>
       {{end}}
       {{ with .Site.Params.social.email }}
