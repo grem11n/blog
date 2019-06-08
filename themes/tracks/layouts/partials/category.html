@@ -10,7 +10,7 @@
   </div>
 </div>
 
-{{ range $index, $element := (where .Data.Pages "Section" "post") }}
+{{ range $index, $element := (where .Data.Pages "Section" "posts") }}
 {{if mod (add $index 1) 2 }}
 <div class="row content">
   {{ if and (isset .Params "image") .Params.image }}
