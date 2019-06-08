@@ -8,7 +8,7 @@
     <div class="menu">
       <a href="{{ .Site.BaseURL }}">Home /</a>
       {{ range $name, $taxonomy := .Site.Sections }}
-      {{ if ne $name "post" }}
+      {{ if ne $name "posts" }}
       <a href="/{{ $name | urlize }}">{{ $name }} / </a>
       {{ end }}
       {{ end }}
