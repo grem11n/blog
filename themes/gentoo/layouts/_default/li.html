@@ -1,19 +1,24 @@
 <article class="post-item">
-  <p class="title">
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
-  </p>
-  <footer class="meta">
-    <time class="pub-time"  datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-      {{ .Lastmod.Format ( .Site.Params.dateformat | default "2006.01.02") }}
-    </time>
-    <div class="terms">
-      {{ if .Params.tags }}
-      <div class="tag">
-        {{ range .Params.tags }}
-          <a class="tag-item" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
-      </div>
-      {{ end }}
+    {{ if .Params.image }}
+    <div class="post-thumbnail-image-box">
+        <a href="{{ .Permalink }}">
+            <img{{ with .Params.image }} class="post-thumbnail-image" src="{{ . }}"{{ end }} alt="{{ .Title }}">
+        </a>
     </div>
-  </footer>
+    {{ end }}
+    <div class="post-thumbnail-entry">
+        <h1 class="title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h1>
+	<span class="pub-time">{{ .Date.Format "January 2, 2006" }}</span></br>
+        {{ if .Params.tags }}
+          {{ range .Params.tags }}
+	  <a class="tag-item" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+          {{ end }}
+	  </br>
+        {{ end }}
+        {{ if .Params.description }}
+	<span class="post-thumbnail-desc">{{ .Params.description }}</br><a href="{{ .RelPermalink }}">Read More…</a></span>
+        {{ end }}
+    </div>
 </article>
