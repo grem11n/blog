@@ -21,6 +21,9 @@
             {{ .Name }}
           </a>
           {{ end }}
+          {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+          <a class="navbar-item" href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name | title }}</a>
+          {{ end }}
         </div>
       </div><!-- /.navbar-menu -->
       <div class="navbar-start social">
