@@ -5,7 +5,7 @@ draft: true
 showonlyimage: true
 draft: false
 categories: ["Test"]
-featured_image: "https://images.unian.net/photos/2018_09/1536332389-9773.jpg"
+image: "https://images.unian.net/photos/2018_09/1536332389-9773.jpg"
 ---
 
 # Hello

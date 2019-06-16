@@ -1,39 +1,35 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Yurii's Blog"
-theme = "tracks"
+theme = "gentoo"
 disqusShortname = "grem1in"
 googleAnalytics = ""
 
+copyright = "(c) 2017 Your Site Name"
+canonifyurls = true
+paginate = 3
+
 [params]
-  style = "default"
-  pages = false
-  description = "Yurii's Blog"
-  copyright = "&copy;2019 Yurii Rochniak"
-  sidebarAbout = [
-    "I am an SRE with the Cloud experience. Passionate about the CICD related things.",
-    "Originally from Kyiv, currently based in Berlin."
-  ]
+  description = "Your Site Description"
+  author = "Your Name"
 
-  email = "yrochnyak@gmail.com"
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 
-  # Nav links in the side bar
-  [[params.navlinks]]
-  name = "Home"
-  url = ""
 
-  [[params.navlinks]]
-  name = "About"
-  url = "about/"
+[[menu.global]]
+    name = "Contact"
+    url = "/contact/"
 
-  [[params.navlinks]]
-  name = "Get in touch"
-  url = "contact/"
+[[menu.global]]
+    name = "About"
+    url = "/about/"
 
-  [params.social]
-  telegram      = "https://t.me/catops"
-  email         = "yrochnyak@gmail.com"
-  twitter       = "https://twitter.com/grem11n"
-  linkedin      = "https://www.linkedin.com/in/yrochnyak/"
-  stackoverflow = "https://stackoverflow.com/users/6099033/yurii-rochniak?tab=profile"
-  github        = "https://github.com/grem11n"
+[params.social]
+    twitter       = "grem11n"
+    github        = "grem11n"
+    telegram      = "catops"
+    email         = "yrochnyak@gmail.com"
+    linkedin      = "yrochnyak/"
+    stackoverflow = "6099033/yurii-rochniak?tab=profile"
