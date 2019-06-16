@@ -1,5 +1,6 @@
 +++
 title = ""
+image = ""
 description = ""
 data = {{ .Date }}
 tags = ["", ""]
