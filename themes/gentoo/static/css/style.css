@@ -156,6 +156,9 @@ input[type="checkbox"],
 input[type="radio"] {
   vertical-align: baseline; }
 
+italic {
+  font-style: italic; }
+
 small {
   font-size: 0.875em; }
 

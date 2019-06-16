@@ -27,6 +27,12 @@
     <div class="post-body">
       {{ .Content }}
     </div>
+    {{ if eq .Page.Dir "post/" }}
+    <hr>
+    <div>
+	    <italic>If you have any questions or feedback, ping me on Twitter: <a href="https://twitter.com/grem11n" rel="me" target="blank">@grem11n</a> </italic>
+    </div>
+    {{ end }}
     <footer class="post-footer">
       <!-- /.social -->
       <div class="share">
