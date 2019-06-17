@@ -5,13 +5,13 @@ theme = "gentoo"
 disqusShortname = "grem1in"
 googleAnalytics = ""
 
-copyright = "(c) 2017 Your Site Name"
+copyright = "(c) 2017 Yurii's Rochniak Blog"
 canonifyurls = true
 paginate = 3
 
 [params]
-  description = "Your Site Description"
-  author = "Your Name"
+  description = "Personal Blog. Opinions on my own."
+  author = "Yurii Rochniak"
 
 [taxonomies]
   category = "categories"
