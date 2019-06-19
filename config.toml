@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Yurii's Blog"
+title = "YR's Blog"
 theme = "gentoo"
 disqusShortname = "grem1in"
 googleAnalytics = "UA-142478515-1"
