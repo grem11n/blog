@@ -21,4 +21,4 @@ min_version = 0.19
   repo = "https://github.com/d-kusk/hugo-gentoo-theme/"
 
 [params]
-  dateformat = "Jan 2, 2006" # Optional
+  dateformat = "2006-01-02" # Optional
