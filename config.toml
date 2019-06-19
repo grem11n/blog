@@ -3,11 +3,11 @@ languageCode = "en-us"
 title = "Yurii's Blog"
 theme = "gentoo"
 disqusShortname = "grem1in"
-googleAnalytics = ""
+googleAnalytics = "UA-142478515-1"
 
 copyright = "(c) 2017 Yurii's Rochniak Blog"
 canonifyurls = true
-paginate = 3
+paginate = 6
 
 [params]
   description = "Personal Blog. Opinions on my own."
