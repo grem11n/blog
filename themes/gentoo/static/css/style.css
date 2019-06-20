@@ -7298,6 +7298,7 @@ body {
   flex-direction: column;
   flex-grow: 1;
   flex: 1 0 auto;
+  box-sizing: content-box;
   }
   .main-content .container {
     display: felx;
@@ -7354,7 +7355,14 @@ body {
   font-weight: 400;
 }
 
+.social {
+  margin-left: auto;
+}
+
 @media screen and (max-width: 820px) {
+  .main-content {
+    box-sizing: inherit;
+  }
   .post-item{
     flex-flow: column;
   }

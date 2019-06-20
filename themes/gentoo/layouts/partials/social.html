@@ -1,4 +1,4 @@
-<p class="navbar-menu social">
+<div class="navbar-start social">
 	{{ with .Site.Params.social.twitter }}
 	<a class="navbar-item social" href="https://twitter.com/{{.}}" rel="me" target="blank"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 	{{ end }}
@@ -45,4 +45,4 @@
 	{{ with .Site.Params.social.email }}
 	<a class="navbar-item social" href="mailto:{{.}}" rel="me" target="blank"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	{{ end }}
-</p>
+</div>

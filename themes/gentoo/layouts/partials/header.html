@@ -25,10 +25,8 @@
           <a class="navbar-item" href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name | title }}</a>
           {{ end }}
         </div>
+        {{ partial "social.html" . }}
       </div><!-- /.navbar-menu -->
-      <div class="navbar-start social">
-	{{ partial "social.html" . }}
-      </div><!-- /.social -->
     </nav>
   </div>
 </header>
