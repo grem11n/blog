@@ -11,6 +11,7 @@ Sup! My name is Yura. I'm SRE passionate about CICD and infrastructure developme
 
 Posts are both in English and Russian.
 
+* Creator and admin of the [@CatOps](https://t.me/catops) Telegram channel (in Russian)
 * Brought [HashiCorp User Group](https://www.meetup.com/Kyiv-HashiCorp-User-Group/) to Kyiv
 * Brought Kubernetes to [Preply](https://preply.com/)
 * Do some little help for [DevOps Days Kyiv](https://devopsdays.com.ua/)
@@ -21,6 +22,7 @@ Posts are both in English and Russian.
 
 Посты на английском и русском.
 
+* Создатель и админ канала [@CatOps](https://t.me/catops) (на русском)
 * Принёс [HashiCorp User Group](https://www.meetup.com/Kyiv-HashiCorp-User-Group/) в Киев
-* Принёс Kubernetes в [Preply](https://preply.com/) 
+* Принёс Kubernetes в [Preply](https://preply.com/)
 * Помогаю [DevOps Days Kyiv](https://devopsdays.com.ua/)
