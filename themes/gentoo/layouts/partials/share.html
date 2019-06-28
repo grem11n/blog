@@ -1,5 +1,6 @@
 {{ $title := .Title }}
-{{ $url := print .Site.BaseURL .Permalink }}
+{{ $siteurl := (cond (eq (getenv "HUGO_BASEURL") nil) (trim .Site.BaseURL "/") (trim (getenv "HUGO_BASEURL") "/")) }}
+{{ $url := (print $siteurl (.Permalink | relURL)) | urlize }}
 {{ $body := print $title "\n\n" .Params.Description "\n\n" $url "\n" }}
 
 <div class="share">
@@ -7,17 +8,17 @@
     <strong>Share on:</strong>
   </span>
   <span class="share">
-    <a href="http://twitter.com/share?url={{ $url }}&text={{ $body }}&via={{with .Site.Params.social.twitter }}{{ . }}{{ end }}" class="twitter" target="blank" aria-label="share on Twitter">
+    <a href="http://twitter.com/share?url={{ htmlEscape $url }}&text={{ htmlEscape $body }}&via={{with .Site.Params.social.twitter }}{{ . }}{{ end }}" class="twitter" target="blank" aria-label="share on Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </span>
   <span class="share">
-    <a href="http://www.facebook.com/sharer.php?u={{ $url }}" class="social" target="blank" aria-label="share on Facebook">
+    <a href="http://www.facebook.com/sharer.php?u={{ htmlEscape $url }}" class="social" target="blank" aria-label="share on Facebook">
       <i class="fab fa-facebook-f"></i>
     </a>
   </span>
   <span class="share">
-	  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ $url }}&title={{ $title }}&summary={{ $body }}&source=LinkedIn" class="twitter" target="blank" aria-label="share on Twitter">
+	  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ htmlEscape $url }}&title={{ htmlEscape $title }}&summary={{ htmlEscape $body }}&source=LinkedIn" class="twitter" target="blank" aria-label="share on Twitter">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </span>
