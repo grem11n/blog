@@ -1,0 +1,14 @@
+{{ $title := .Title }}
+{{ $url := .Permalink | absURL }}
+{{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
+<strong>Share via:</strong>
+<span class="share">
+<a href="http://www.facebook.com/sharer.php?u={{ $url }}" class="social" aria-label="share on Facebook">
+  <i class="fab fa-facebook-f"></i>
+</a>
+</span>
+<span class="share">
+<a href="http://twitter.com/share?url={{ $url }}&text={{ $title }}&via={{with .Site.Social.twitter }}{{ . }}{{ end }}" class="twitter" aria-label="share on Twitter">
+  <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+</a>
+</span>

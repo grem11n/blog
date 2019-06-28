@@ -7456,3 +7456,7 @@ figcaption {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+.share span {
+  padding-left: 55px;
+}
