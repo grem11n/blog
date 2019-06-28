@@ -28,14 +28,13 @@
       {{ .Content }}
     </div>
     {{ if eq .File.Dir "post/" }}
-    <hr>
-    <div>
-	    <italic>If you have any questions or feedback, ping me on Twitter: <a href="https://twitter.com/grem11n" rel="me" target="blank">@grem11n</a> </italic>
-    </div>
     <footer class="post-footer">
-      <!-- /.social -->
-      <div class="share">
-        {{ partial "share.html" }}
+      <hr>
+      <!-- /.social share -->
+      {{ partial "share.html" . }}
+      </br>
+      <div>
+        <italic>If you have any questions or feedback, ping me on Twitter: <a href="https://twitter.com/grem11n" rel="me" target="blank">@grem11n</a> </italic>
       </div>
 
       <div class="pagenation">
