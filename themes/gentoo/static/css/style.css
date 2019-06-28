@@ -7460,3 +7460,7 @@ figcaption {
 .share span:not(:first-child) {
   padding-left: 55px;
 }
+
+.share a {
+  color: #363636;
+}

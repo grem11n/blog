@@ -1,13 +1,13 @@
 {{ $title := .Title }}
-{{ $url := .Permalink | absURL }}
-{{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
+{{ $url := .Permalink | absLangURL }}
+{{ $body := print $title "\n\n" .Params.Description "\n\n" $url "\n" }}
 
 <div class="share">
   <span>
     <strong>Share on:</strong>
   </span>
   <span class="share">
-    <a href="http://twitter.com/share?url={{ $url }}&text={{ $title }}&via={{with .Site.Params.social.twitter }}{{ . }}{{ end }}" class="twitter" target="blank" aria-label="share on Twitter">
+    <a href="http://twitter.com/share?url={{ $url }}&text={{ $body }}&via={{with .Site.Params.social.twitter }}{{ . }}{{ end }}" class="twitter" target="blank" aria-label="share on Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </span>
