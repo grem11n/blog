@@ -1,5 +1,5 @@
 {{ $title := .Title }}
-{{ $url := .Permalink | absLangURL }}
+{{ $url := print .Site.BaseURL .Permalink }}
 {{ $body := print $title "\n\n" .Params.Description "\n\n" $url "\n" }}
 
 <div class="share">
