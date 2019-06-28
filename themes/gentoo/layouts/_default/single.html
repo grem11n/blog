@@ -30,10 +30,8 @@
     {{ if eq .File.Dir "post/" }}
     <footer class="post-footer">
       <hr>
-      <!-- /.social -->
-      <div class="share">
-        {{ partial "share.html" }}
-      </div>
+      <!-- /.social share -->
+      {{ partial "share.html" . }}
       </br>
       <div>
         <italic>If you have any questions or feedback, ping me on Twitter: <a href="https://twitter.com/grem11n" rel="me" target="blank">@grem11n</a> </italic>

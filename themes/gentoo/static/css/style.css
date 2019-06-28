@@ -7457,6 +7457,6 @@ figcaption {
   text-rendering: optimizeLegibility;
 }
 
-.share span {
+.share span:not(:first-child) {
   padding-left: 55px;
 }
