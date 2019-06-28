@@ -9,7 +9,7 @@ categories: ["Tech"]
 tags: ["kubernetes", "eng"]
 ---
 
-{{< figure src="https://techcrunch.com/wp-content/uploads/2018/01/mvimg_20180129_115533.jpg?w=1390&crop=1" class="left" caption="Source: https://techcrunch.com/2018/01/30/heptio-launches-its-kubernetes-un-distribution/" >}}
+{{< figure src="https://techcrunch.com/wp-content/uploads/2018/01/mvimg_20180129_115533.jpg?w=1390&crop=1" class="left" caption="[Image source](https://techcrunch.com/2018/01/30/heptio-launches-its-kubernetes-un-distribution/)" >}}
 
 I've been using Kubernetes for almost a year and want to share some takeaways and things I've learned about it so far.
 
