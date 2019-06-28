@@ -7407,6 +7407,9 @@ body {
   .footer-nav .inner {
     float: none;
   }
+  .share span:not(:first-child) {
+    font-size: 3.5vw;
+  }
 }
 
 /* Image Caption */
@@ -7458,7 +7461,14 @@ figcaption {
 }
 
 .share span:not(:first-child) {
+  float: none;
+  text-align: center;
   padding-left: 55px;
+}
+
+.share {
+    display: inline-block;
+    margin: auto;
 }
 
 .share a {
