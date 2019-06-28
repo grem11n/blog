@@ -1,5 +1,5 @@
 {{ $title := .Title }}
-{{ $siteurl := (cond (eq (getenv "HUGO_BASEURL") nil) (trim .Site.BaseURL "/") (trim (getenv "HUGO_BASEURL") "/")) }}
+{{ $siteurl := "https://grem1.in" }}
 {{ $url := (print $siteurl (.Permalink | relURL)) | urlize }}
 {{ $body := print $title "\n\n" .Params.Description "\n\n" $url "\n" }}
 
