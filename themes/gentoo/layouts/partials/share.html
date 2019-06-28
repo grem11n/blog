@@ -1,24 +1,24 @@
 {{ $title := .Title }}
 {{ $siteurl := "https://grem1.in" }}
-{{ $url := (print $siteurl (.Permalink | relURL)) | urlize }}
-{{ $body := print $title "\n\n" .Params.Description "\n\n" $url "\n" }}
+{{ $url := (print $siteurl (.Permalink | relURL)) }}
+{{ $body := print $title "\n\n" .Params.Description "\n\n" }}
 
 <div class="share">
   <span>
     <strong>Share on:</strong>
   </span>
   <span class="share">
-    <a href="http://twitter.com/share?url={{ htmlEscape $url }}&text={{ htmlEscape $body }}&via={{with .Site.Params.social.twitter }}{{ . }}{{ end }}" class="twitter" target="blank" aria-label="share on Twitter">
+    <a href="http://twitter.com/share?url={{ $url }}&text={{ htmlEscape $body }}&via={{with .Site.Params.social.twitter }}{{ . }}{{ end }}" class="twitter" target="blank" aria-label="share on Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </span>
   <span class="share">
-    <a href="http://www.facebook.com/sharer.php?u={{ htmlEscape $url }}" class="social" target="blank" aria-label="share on Facebook">
+    <a href="http://www.facebook.com/sharer.php?u={{ $url }}" class="social" target="blank" aria-label="share on Facebook">
       <i class="fab fa-facebook-f"></i>
     </a>
   </span>
   <span class="share">
-	  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ htmlEscape $url }}&title={{ htmlEscape $title }}&summary={{ htmlEscape $body }}&source=LinkedIn" class="twitter" target="blank" aria-label="share on Twitter">
+	  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ $url }}&title={{ htmlEscape $title }}&summary={{ htmlEscape $body }}&source=LinkedIn" class="twitter" target="blank" aria-label="share on LinkedIn">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </span>
