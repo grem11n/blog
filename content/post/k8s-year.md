@@ -63,7 +63,7 @@ Although you can re-create everything from scratch, even if you're running on th
 
 Sure, cloud provider may take a lot of underlying work from you, but we are all humans and incidents do happen.
 
-[Valero (former Heptio Ark)](https://github.com/heptio/velero) could help you with that.
+[Velero (former Heptio Ark)](https://github.com/heptio/velero) could help you with that.
 
 Have your own playground cluster
 ----
