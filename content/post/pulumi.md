@@ -21,7 +21,7 @@ First of all, syntax. Since you're using a general purpose language, you don't n
 
 Let's take a look at a basic example.
 
-```javascript
+```ts
 import * as aws from "@pulumi/aws";
 
 let group = new aws.ec2.SecurityGroup("web-sg", {
@@ -38,7 +38,7 @@ let server = new aws.ec2.Instance("web-server", {
 
 This is one of the examples from the official website. Basically, here we create a security group and attach it to a new instance. Looks pretty declarative apart of that the code is written in TypeScript. However, let's take a look at more interesting example:
 
-```javascript
+```ts
 /**
 We need to import Pulumi providers (I'm not sure if they call it provides, tho)
 */
@@ -60,68 +60,68 @@ Function returns a Route53 Record. However, based on the failoverPrecedence argu
 */
 
 export function createRecord(
-	name: string,
-	records: pulumi.Input<any>,
-	zoneId: pulumi.Input<any>,
-	failoverPrecedence?: string): aws.route53.Record {
-		// Here I set default r53 record options
-		var rawOptions = {
-			name: name,
-			records: records,
+    name: string,
+    records: pulumi.Input<any>,
+    zoneId: pulumi.Input<any>,
+    failoverPrecedence?: string): aws.route53.Record {
+        // Here I set default r53 record options
+        var rawOptions = {
+            name: name,
+            records: records,
                         type: "CNAME",
-			ttl: 300,
-			zoneId: zoneId,
-		}
-		var options = rawOptions
-		if (failoverPrecedence != null && failoverPrecedence.toUpperCase() === "PRIMARY") {
-			// Create CloudWatch Metric Alarm if it's a PRIMARY R53 record
-			const cwAlarm = new aws.cloudwatch.MetricAlarm("primary", {
-				alarmDescription: "Monitor healthy node count",
-				metricName: "HealthyHostCount",
-				comparisonOperator: "LessThanThreshold",
-				evaluationPeriods: 1,
-				namespace: "AWS/ELB",
-				period: 60,
-				statistic: "Average",
-				threshold: 1,
-			});
-			// Create Route53 HealthCheck if it's a PRIMARY R53 record
-			const r53HealthCheck = new aws.route53.HealthCheck("primary", {
-				cloudwatchAlarmName: cwAlarm.name,
-				type: "CLOUDWATCH_METRIC",
-				cloudwatchAlarmRegion: "eu-central-1",
-				insufficientDataHealthStatus: "Unhealthy",
-			});
+            ttl: 300,
+            zoneId: zoneId,
+        }
+        var options = rawOptions
+        if (failoverPrecedence != null && failoverPrecedence.toUpperCase() === "PRIMARY") {
+            // Create CloudWatch Metric Alarm if it's a PRIMARY R53 record
+            const cwAlarm = new aws.cloudwatch.MetricAlarm("primary", {
+                alarmDescription: "Monitor healthy node count",
+                metricName: "HealthyHostCount",
+                comparisonOperator: "LessThanThreshold",
+                evaluationPeriods: 1,
+                namespace: "AWS/ELB",
+                period: 60,
+                statistic: "Average",
+                threshold: 1,
+            });
+            // Create Route53 HealthCheck if it's a PRIMARY R53 record
+            const r53HealthCheck = new aws.route53.HealthCheck("primary", {
+                cloudwatchAlarmName: cwAlarm.name,
+                type: "CLOUDWATCH_METRIC",
+                cloudwatchAlarmRegion: "eu-central-1",
+                insufficientDataHealthStatus: "Unhealthy",
+            });
 
-			// Add non-default options
-			let addOptions = {
-				setIdentifier: "001",
-				healthCheckId: r53HealthCheck.id,
-				failoverRoutingPolicies: [{
-					type: failoverPrecedence.toUpperCase()
-				}],
-			}
+            // Add non-default options
+            let addOptions = {
+                setIdentifier: "001",
+                healthCheckId: r53HealthCheck.id,
+                failoverRoutingPolicies: [{
+                    type: failoverPrecedence.toUpperCase()
+                }],
+            }
 
-			// Merge default and non-default options
-			const options = {...rawOptions, ...addOptions};
+            // Merge default and non-default options
+            const options = {...rawOptions, ...addOptions};
 
-		} else if (failoverPrecedence != null && failoverPrecedence.toUpperCase() === "SECONDARY") {
-			// Non-default options for SECONDARY Record
-			let addOptions = {
-				setIdentifier: "002",
-				failoverRoutingPolicies: [{
-					type: failoverPrecedence.toUpperCase()
-				}],
-		        }
+        } else if (failoverPrecedence != null && failoverPrecedence.toUpperCase() === "SECONDARY") {
+            // Non-default options for SECONDARY Record
+            let addOptions = {
+                setIdentifier: "002",
+                failoverRoutingPolicies: [{
+                    type: failoverPrecedence.toUpperCase()
+                }],
+                }
 
-			// Merge default and non-default options
-			const options = {...rawOptions, ...addOptions};
-		} else if (failoverPrecedence != null) {
-			throw new Error('failoverPrecedence must be either PRIMARY or SECONDARY!');
-		}
+            // Merge default and non-default options
+            const options = {...rawOptions, ...addOptions};
+        } else if (failoverPrecedence != null) {
+            throw new Error('failoverPrecedence must be either PRIMARY or SECONDARY!');
+        }
                 return new aws.route53.Record(
-			name, options
-		);
+            name, options
+        );
 }
 ```
 
@@ -129,7 +129,7 @@ In this case we have a function, which creates either simple Route53 record or a
 
 Later, we can call this function in the `index.ts` like this:
 
-```javascript
+```ts
 // Declare Route53 records
 // `export` provides all the output into stdin. Helpful for debug
 export const host001R53 = createRecord(`host-001`, [host001Elb.dnsName.apply(d => d)], r53ZoneId)
@@ -173,7 +173,7 @@ With Terraform you have a DSL (HCL) in which you define resournces and relation 
 
 ### What I didn't like
 
-* By default Pulumi will ask you to login to their platform. It's possible to use local state (which I did), but I'm not sure if it's possible to use custom remote state like S3.
+* By default Pulumi will ask you to login to their platform. It's possible to use local state (which I did), also it's possible to configure remote storage for the state. [Here is the documentation](https://www.pulumi.com/docs/intro/concepts/state/).
 * Missing documentation. For example, documentation for Go is missing completely, though it's supported.
 
 ## Random observations
@@ -198,3 +198,14 @@ It may be a way to go for the greenfield projects, which are run by development 
 However, I'm not sure how to keep it consistent (several languages are supported and each of them allow flexibility on it's own). Though, keeping consistency is possible (like in the example with custom classes).
 
 I don't think, I get back to Pulumi any time soon. Mainly because we are heavily using Terraform. Though, I like appreciate new competition in IaC area. I really think that Pulumi is an interesting project and it might be helpful for a lot people out here.
+
+## Links
+
+* [Feedback about Pulumi by Patrick Debois](https://gist.github.com/jedi4ever/816cf6642d989b70d4fec8fa6e1298bf)
+* [Pulumi docs on GitHub](https://github.com/pulumi/docs)
+* [tf2pulumi - tool to convert Terraform projects into Pulumi TypeScript code](https://github.com/pulumi/tf2pulumi)
+* [Using Terraform Remote State with Pulumi](https://www.pulumi.com/blog/using-terraform-remote-state-with-pulumi/)
+* [How Pulumi Compares to Terraform for Infrastructure as Code by Kyle Galbraith](https://dev.to/kylegalbraith/how-pulumi-compares-to-terraform-for-infrastructure-as-code-434j)
+* [Pulumi examples](https://github.com/pulumi/examples)
+* [Pulumi State Backends](https://www.pulumi.com/docs/intro/concepts/state/)
+* [Pulumi Slack Community](https://slack.pulumi.com/)
