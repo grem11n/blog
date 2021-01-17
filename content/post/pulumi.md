@@ -21,7 +21,7 @@ First of all, syntax. Since you're using a general purpose language, you don't n
 
 Let's take a look at a basic example.
 
-```ts
+```js
 import * as aws from "@pulumi/aws";
 
 let group = new aws.ec2.SecurityGroup("web-sg", {
@@ -38,7 +38,7 @@ let server = new aws.ec2.Instance("web-server", {
 
 This is one of the examples from the official website. Basically, here we create a security group and attach it to a new instance. Looks pretty declarative apart of that the code is written in TypeScript. However, let's take a look at more interesting example:
 
-```ts
+```js
 /**
 We need to import Pulumi providers (I'm not sure if they call it provides, tho)
 */
@@ -129,7 +129,7 @@ In this case we have a function, which creates either simple Route53 record or a
 
 Later, we can call this function in the `index.ts` like this:
 
-```ts
+```js
 // Declare Route53 records
 // `export` provides all the output into stdin. Helpful for debug
 export const host001R53 = createRecord(`host-001`, [host001Elb.dnsName.apply(d => d)], r53ZoneId)
