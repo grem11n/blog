@@ -7,6 +7,7 @@
   HUGO_VERSION = "0.80.0"
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
+  pygmentsStyle = "monokai"
 
 [context.split1]
   command = "hugo --gc --minify --enableGitInfo"
@@ -14,18 +15,21 @@
 [context.split1.environment]
   HUGO_VERSION = "0.80.0"
   HUGO_ENV = "production"
+  pygmentsStyle = "monokai"
 
 [context.deploy-preview]
   command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.80.0"
+  pygmentsStyle = "monokai"
 
 [context.branch-deploy]
   command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
   HUGO_VERSION = "0.80.0"
+  pygmentsStyle = "monokai"
 
 [context.next.environment]
   HUGO_ENABLEGITINFO = "true"
