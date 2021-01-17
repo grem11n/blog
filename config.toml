@@ -12,6 +12,7 @@ paginate = 6
 [params]
   description = "Personal Blog. Opinions on my own."
   author = "Yurii Rochniak"
+  mainSections = ["post", "posts"]
 
 [taxonomies]
   category = "categories"
