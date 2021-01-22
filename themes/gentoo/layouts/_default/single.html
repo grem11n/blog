@@ -34,9 +34,11 @@
       {{ partial "share.html" . }}
       </br>
       </br>
+      {{ if .Site.Params.Social.twitter }}
       <div>
-        <italic>If you have any questions or feedback, ping me on Twitter: <a href="https://twitter.com/grem11n" rel="me" target="blank">@grem11n</a> </italic>
+          <italic>If you have any questions or feedback, ping me on Twitter: <a href="https://twitter.com/{{ .Site.Params.Social.twitter }}" rel="me" target="blank">@{{ .Site.Params.Social.twitter }}</a> </italic>
       </div>
+      {{ end }}
 
       <div class="pagenation">
         <ul class="pagenation-list">
