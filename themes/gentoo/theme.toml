@@ -3,16 +3,17 @@
 
 name = "Hugo Gentoo Theme"
 license = "MIT"
-licenselink = "https://github.com/d-kusk/hugo-gentoo-theme/blob/master/LICENSE.md"
-description = "It is the theme of Hugo. Created by imagining the Gentoo penguin."
-homepage = "https://github.com/d-kusk/hugo-gentoo-theme"
+licenselink = "https://github.com/grem11n/hugo-gentoo-theme/blob/master/LICENSE.md"
+description = "This is a fork of https://github.com/dsk52/hugo-gentoo-theme, which is archived now"
+homepage = "https://github.com/grem11n/hugo-gentoo-theme"
 tags = ["blog", "responsive"]
 features = ["blog", "themes", "responsive", "Google Analytics"]
 min_version = 0.19
 
-[author]
-  name = "Daisuke Konishi"
-  homepage = "https://blog.daisukekonishi.com"
+authors = [
+  {name = "Daisuke Konishi", homepage = "https://blog.daisukekonishi.com"},
+  {name = "Yurii Rochniak", homepage = "https://grem1.in"}
+]
 
 # If porting an existing theme
 [original]

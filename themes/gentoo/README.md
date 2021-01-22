@@ -1,25 +1,25 @@
 # hugo-gentoo-theme
-[![Build Status](https://travis-ci.org/d-kusk/hugo-gentoo-theme.svg?branch=develop)](https://travis-ci.org/d-kusk/hugo-gentoo-theme)
+![test-theme](https://github.com/grem11n/hugo-gentoo-theme/workflows/test-theme/badge.svg)
 
-![hugo-gentoo-theme's screenshot](https://github.com/d-kusk/hugo-gentoo-theme/blob/develop/images/screenshot.png)
-
-hugo-gentoo-theme is a [Hugo](https://gohugo.io) theme.  
+This is a fork of the [hugo-gentoo-theme](https://github.com/d-kusk/hugo-gentoo-theme) theme for [Hugo](https://gohugo.io), which is archived now. 
 This theme has a motif of Gentoo penguin.
 
+![hugo-gentoo-theme's screenshot](https://raw.githubusercontent.com/grem11n/hugo-gentoo-theme/master/images/page-example.png)
 
 ## Feature
 
 - Responsive Design
 - Support for tags and categories
-- Support for some JSON-LD
 - Analysis with Google Analytics
+- Support social links
+- Support post image thumbnails
 
 ## Get the Theme
 Inside the folder of your Hugo site run:
 
 ```
 $ cd themes
-$ git clone https://github.com/d-kusk/hugo-gentoo-theme.git
+$ git clone https://github.com/grem11n/hugo-gentoo-theme.git
 ```
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
@@ -44,4 +44,4 @@ $ hugo new post/your-post-name.md
 ```
 
 ## License
-This theme is released under the [MIT license](https://github.com/d-kusk/hugo-gentoo-theme/blob/master/LICENSE.md)
+This theme is released under the [MIT license](https://github.com/grem11n/hugo-gentoo-theme/blob/master/LICENSE.md)
