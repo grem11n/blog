@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "YR's Blog"
-theme = "gentoo"
+theme = "hugo-gentoo-theme"
 disqusShortname = "grem1in"
 googleAnalytics = "UA-142478515-1"
 
