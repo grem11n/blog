@@ -22,10 +22,9 @@ Post in English and Russian.
 
 If you have any questions or feedback, feel free to contact me on:
 
+* Write an email to: yrochnyak@gmail.com
 * Twitter: [@grem11n](https://twitter.com/grem11n)
-
 * LinkedIn: [yrochnyak](https://www.linkedin.com/in/yrochnyak/)
-
 * Telegram: [@grem1in](https://t.me/grem1in)
 
 Also, subscribe to my Telegram Cahannel: [@CatOps](https://t.me/catops)
@@ -45,10 +44,9 @@ Also, subscribe to my Telegram Cahannel: [@CatOps](https://t.me/catops)
 
 Если вы хотите мне написать:
 
+* Написать мне на: yrochnyak@gmail.com
 * Twitter: [@grem11n](https://twitter.com/grem11n)
-
 * LinkedIn: [yrochnyak](https://www.linkedin.com/in/yrochnyak/)
-
 * Telegram: [@grem1in](https://t.me/grem1in)
 
 И подписывайтесь на канал, конечно же: [@CatOps](https://t.me/catops)
