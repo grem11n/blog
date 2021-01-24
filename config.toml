@@ -8,20 +8,19 @@ googleAnalytics = "UA-142478515-1"
 copyright = "(c) 2017 Yurii's Rochniak Blog"
 canonifyurls = true
 paginate = 6
+enableInlineShortcodes = true
+enableEmoji = true
 
 [params]
-  description = "Personal Blog. Opinions on my own."
   author = "Yurii Rochniak"
+  description = "Site Reliability Engineer. Write a bit about life and tech. Opinions on my own"
   mainSections = ["post", "posts"]
+  images = ["/img/card_iamge.jpg"]
 
 [taxonomies]
   category = "categories"
   tag = "tags"
 
-
-[[menu.global]]
-    name = "Contact"
-    url = "/contact/"
 
 [[menu.global]]
     name = "About"
