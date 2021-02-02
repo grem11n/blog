@@ -47,7 +47,6 @@ First of all, you will need to configure permissions for a Crossplane provider. 
 
 With this been said, let's take a look at the provider configuration. I'll use AWS as an example. Crossplane provides a semi-automated way to configure a provider (you still need to configure IAM), but a manual configuration provides a few interesting insights. You can find it in the [official doc](https://crossplane.io/docs/v1.0/cloud-providers/aws/aws-provider.html) as well:
 
-{{< details provider.yaml >}}
 ```yaml
 cat > provider.yaml <<EOF
 ---
@@ -79,7 +78,6 @@ kubectl apply -f "provider.yaml"
 # delete the credentials variable
 unset BASE64ENCODED_AWS_ACCOUNT_CREDS
 ```
-{{< /details >}}
 
 Where `BASE64ENCODED_AWS_ACCOUNT_CREDS`is an environment variable, which contains your AWS credentials in the same syntax as `~/.aws/credentials`:
 
@@ -114,7 +112,6 @@ kubectl get providers.pkg.crossplane.io
 
 Now you are ready to create your first infrastructure resources with Crossplane! You can find all the available resources in[ the API documentation](https://doc.crds.dev/github.com/crossplane/provider-aws) for your provider. In this example, I'm going to create a simple IAM policy:
 
-{{< details "IAM policy" >}}
 ```yaml
 cat <<EOF | kubectl apply -f -
 ---
@@ -143,7 +140,6 @@ spec:
       }
 EOF
 ```
-{{< /details >}}
 
 [Crossplane API reference for AWS IAM policy](https://doc.crds.dev/github.com/crossplane/provider-aws/identity.aws.crossplane.io/IAMPolicy/v1alpha1)
 
