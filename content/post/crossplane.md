@@ -1,5 +1,5 @@
 ---
-title: "Crossing the Crossplane"
+title: "Crossplane"
 description: "I briefly went through the installation and configuration process and also shared my thoughts about Crossplane"
 date: 2021-02-01
 draft: false
