@@ -37,7 +37,7 @@ helm search repo crossplane-master --devel
 helm install crossplane --namespace crossplane-system crossplane-master/crossplane --devel --version v1.0.0
 ```
 
-As you can see, the official documentation suggests installing Crossplane into a separate NameSpace. It doesn't necessarily, but having a separate namespace for it can save you some time if you need to debug something. Also, make sure to check the [documentation](https://crossplane.io/docs/v1.0/reference/install.html) for installation options.
+As you can see, the official documentation suggests installing Crossplane into a separate namespace. It doesn't necessarily, but having a separate namespace for it can save you some time if you need to debug something. Also, make sure to check the [documentation](https://crossplane.io/docs/v1.0/reference/install.html) for installation options.
 
 ### Install a public cloud provider
 
@@ -98,7 +98,7 @@ Depending on how you authenticate against AWS API, you need to modify the provid
 
 You only need to modify the Deployment and add required annotations there, secret manager path references, etc. I recommend you create a custom configuration for it and just apply it all together. Perhaps, it will be possible to use something different from Kubernetes Secrets in Crossplane in the future, will see.
 
-If you have installed Crossplane in a separate NameSpace, you should be able to validate installation with:
+If you have installed Crossplane in a separate namespace, you should be able to validate installation with:
 
 ```bash
 kubectl get all
