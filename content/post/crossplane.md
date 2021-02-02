@@ -13,7 +13,7 @@ tags: ["kubernetes", "k8s", "iac", "crossplane"]
 
 Crossplane is an Open Source tool, which allows you to manage Cloud infrastructure as Kubernetes objects. In other words, you can create, modify, and delete AWS cloud assets using only Kubernetes manifests in the same way as with Terraform (or another IaC tool). It also allows you to manage cloud resources in different public clouds using a concept of providers very similarly to Terraform. Therefore, Crossplane allows engineers to manage the whole application lifecycle from a single entry point e.g. a Helm chart.
 
-{{< figure src="https://crossplane.io/docs/v0.2/media/arch.png" alt="crossplane architecture diagram" >}}
+{{< figure src="https://crossplane.io/docs/v0.2/media/arch.png" alt="crossplane architecture diagram" caption="source: https://crossplane.io/docs/v0.2/" >}}
 
 However, it might be hard to define, which resources belong to a particular application since you can have shared services. You can of course define your entire infrastructure as Crossplane objects and keep it separate. Although, in this case, you will miss the whole point of this project, in my opinion.
 
@@ -195,6 +195,6 @@ If you are running a relatively old infrastructure with some skeletons in the cl
 
 ### Everything in a Single Package
 
-{{< figure src="https://crossplane.io/docs/v0.3/media/crossplane-overview.png" alt="multi-tenant architecture" >}}
+{{< figure src="https://crossplane.io/docs/v0.3/media/crossplane-overview.png" alt="multi-tenant architecture" caption="source: https://crossplane.io/docs/v0.3/" >}}
 
 The special beauty of Crossplane is that now you can create a bundle, which not only describes your application, but also its infrastructure dependencies. Moreover, you can describe your app's deployable and it's infra, in the same way, using the same syntax. Of course, real life is more complicated than a code example on the Internet, but with the growing popularity of managed Kubernetes solutions, I can foresee that this project will get much wider adoption.
