@@ -11,7 +11,7 @@ tags: ["kubernetes", "k8s", "iac", "crossplane"]
 
 ## What's Crossplane?
 
-Crossplane is an Open Source tool, which allows you to manage Cloud infrastructure as Kubernetes objects. In other words, you can create, modify, and delete AWS cloud assets using only Kubernetes manifests in the same way as with Terraform (or another IaC tool). It also allows you to manage cloud resources in different public clouds using a concept of providers very similarly to Terraform. Therefore, Crossplane allows engineers to manage the whole application lifecycle from a single entry point e.g. a Helm chart.
+[Crossplane](https://crossplane.io/) is an Open Source tool, which allows you to manage Cloud infrastructure as Kubernetes objects. In other words, you can create, modify, and delete AWS cloud assets using only Kubernetes manifests in the same way as with Terraform (or another IaC tool). It also allows you to manage cloud resources in different public clouds using a concept of providers very similarly to Terraform. Therefore, Crossplane allows engineers to manage the whole application lifecycle from a single entry point e.g. a Helm chart.
 
 {{< figure src="https://crossplane.io/docs/v0.2/media/arch.png" alt="crossplane architecture diagram" caption="source: https://crossplane.io/docs/v0.2/" >}}
 
