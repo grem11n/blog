@@ -1,10 +1,16 @@
 ---
 title: "Yurii Rochniak"
-data: 2021-01-24
+date: 2021-01-24
 draft: false
 ---
 
 {{< figure src="https://devopsdays.org/events/2019-kiev/organizers/yurii-rochniak.jpg" class="about" >}}
+
+## Contacts
+
+* You can write an email to: yrochnyak@gmail.com
+* Or ping me on LinkedIn: [yrochnyak](https://www.linkedin.com/in/yrochnyak/)
+* Social buttons in header and footer of this website also work
 
 ## Career Path:
 

@@ -20,11 +20,11 @@ Now the GUI part. I find it very powerful to be able to run your development env
 
 {{< figure src="/img/posts/nvim/wide-screen.png" >}}
 
-This layout works very well for me, but it comes with a notable disadvantage: You have only 1/3 of the display space for your terminal, aligned vertically. This is completely fine for regular terminal usage, but maybe cumbersome for using a text editor. Even "not-that-long" lines can be broken into two lines and any built-in file manager becomes effectively useless. I want to occasionally have a wider space to write/check the source code, but I don't want to resize my iTerm2 app all the time.
+This layout works very well for me, but it comes with a notable disadvantage: You have only 1/3 of the display space for your terminal, aligned vertically. This is completely fine for regular terminal usage, but may be cumbersome for using a text editor. Even "not-that-long" lines can be broken into two lines and any built-in file manager becomes effectively useless. I want to occasionally have a wider space to write/check the source code, but I don't want to resize my iTerm2 app all the time.
 
 Why not use an IDE? A few reasons: in most cases, I don't need the whole power of an IDE. Second, I value consistency. I can SSH to almost any machine and it will have vi or at least installed. Third, muscle memory. For many years [Neo]Vim as my primary editor and I'm just getting super used to its commands and key bindings. I just don't see the point of learning this stuff once again. Of course, almost every IDE nowadays has some kind of a Vim-keybindings plugin, but the previous two arguments are still valid.
 
-This was the time to look at NeoVim GUIs once again. There are [quite a few implementations](https://github.com/neovim/neovim/wiki/Related-projects#gui), actually. Some of them are inactive or abandoned. Some others are written on top of the Electron framework (I am biased here). Others have random glitches on macOS. To be honest, the only GUI that worked for me is [neovim-qt](https://github.com/equalsraf/neovim-qt). It has some problems out of the box, but I managed to fix them. And now I am writing this article in order to not forget how.
+This was the time to look at NeoVim GUIs once again. There are [quite a few implementations](https://github.com/neovim/neovim/wiki/Related-projects#gui). Some of them are inactive or abandoned. Some others are written on top of the Electron framework (I am biased here). Others have random glitches on macOS. To be honest, the only GUI that worked for me is [neovim-qt](https://github.com/equalsraf/neovim-qt). It has some problems out of the box, but I managed to fix them. And now I am writing this article to not forget how.
 
 ## Basic NVim installation
 
@@ -44,13 +44,13 @@ For some reason, command-line arguments to fetch the latest code are different f
 
 Now I can just put my configs from [dotfiles](https://github.com/grem11n/dotfiles) to the respective directories. I tried to keep a filesystem structure as much as possible in this repo. Therefore, you can just add a dot (`.`) in front of level 1 files and directories. All my configuration is in the `.vimrc`file. Sometimes, I use "versioning" for them inside the repo. It usually happens when I refactor something there and don't want to get rid of the old stuff while evaluating the new one.
 
-I use [vim-plug](https://github.com/junegunn/vim-plug) as my plugin manager. It should be installed before aeverything else. Just follow the installations directives from README. Once it's installed, all other plugins can be installed by calling a Vim command:
+I use [vim-plug](https://github.com/junegunn/vim-plug) as my plugin manager. It should be installed before everything else. Just follow the installation directives from README. Once it's installed, all other plugins can be installed by calling a Vim command:
 
 ```vim
 :PlugInstall
 ```
 
-Now, once all the things are in place, it worths running NeoVim healschedk:
+Now, once all the things are in place, it worths running NeoVim heals chek:
 
 ```vim
 :checkhealth
@@ -92,7 +92,7 @@ NeoVim and its plugins rely on various environment variables. You normally can c
 
 #### ginit.vim
 
-On the last 4 lines of my `ginit.vim` example I'm basicaly setting some Env vars for Perl parser. You can set any variables you want with `let` directive. Also, you can use different values in your default shell config and *rc files. So, you can override a default variable here. For now, I haven't found any disadvantages of this method.
+On the last 4 lines of my `ginit.vim` example, I'm setting some Env vars for Perl parser. You can set any variables you want with the `let` directive. Also, you can use different values in your default shell config and *rc files. So, you can override a default variable here. For now, I haven't found any disadvantages of this method.
 
 #### /etc/launchd.conf
 
@@ -105,7 +105,7 @@ setenv TERM xterm-256color
 setenv PATH /usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:/Users/yurii.rochniak/perl5/bin:/Users/yurii.rochniak/.nvm/versions/node/v14.15.0/bin:/usr/local/Cellar/tfenv/1.0.1/bin:/Users/yurii.rochniak/.yarn/bin:/Users/yurii.rochniak/.config/yarn/global/node_modules/.bin:/Users/yurii.rochniak/.krew/bin:/Users/yurii.rochniak/Golang/bin:/Users/yurii.rochniak/Library/Python/3.8/bin:/Users/yurii.rochniak/Library/Python/2.7/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/usr/local/go/bin:/Users/yurii.rochniak/.cargo/bin
 ```
 
-This is very similar to what you would normally do in your shell configuration file with the only difference that you should use `setenv` directive on MacOS. [Here is an article, where I found it](https://www.bounga.org/tips/2020/04/07/instructs-mac-os-gui-apps-about-path-environment-variable/).
+This is very similar to what you would normally do in your shell configuration file with the only difference that you should use the `setenv` directive on MacOS. [Here is an article, where I found it](https://www.bounga.org/tips/2020/04/07/instructs-mac-os-gui-apps-about-path-environment-variable/).
 
 Once, you set the environment variables in `launchd.conf`, don't forget to export them in the runtime and reload your Dock and Spotlight. Alternatively, you can just reboot your laptop.
 
