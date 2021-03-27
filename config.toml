@@ -26,6 +26,10 @@ enableEmoji = true
     name = "About"
     url = "/about/"
 
+[[menu.global]]
+    name = "Speaking"
+    url = "/talks/"
+
 [params.social]
     twitter       = "grem11n"
     github        = "grem11n"
