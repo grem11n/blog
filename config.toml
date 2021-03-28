@@ -27,7 +27,7 @@ enableEmoji = true
     url = "/about/"
 
 [[menu.global]]
-    name = "Speaking"
+    name = "Talks"
     url = "/talks/"
 
 [params.social]
