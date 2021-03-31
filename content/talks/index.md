@@ -10,6 +10,12 @@ If you are interested in having me speak at an internal or external event, you c
 
 ## Previous Talks
 
+### Guest speaker at "Потестим в проде" (rus)
+
+Casually speaking about the common problems in devops-ish terminology, differences between IT market in Kyiv and Berlin, and if you need Kubernetes to run your personal blog
+
+{{< youtube GVvYuFy0GJg >}}
+
 ### Guest speaker at "Дизлайк відписка" (ukr)
 
 Just a casual talk about the career path and also community building experience. Told some stories about [CatOps Telegram channel](https://t.me/catops) and [HashiCorp User Group Kyiv](https://www.meetup.com/Kyiv-HashiCorp-User-Group/)
