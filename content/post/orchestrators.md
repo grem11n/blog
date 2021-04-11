@@ -1,7 +1,7 @@
 ---
 title: "On orchestrators, schedulers, and platforms"
 description: "Here I want to wrap up my thoughts and opinions on what's going on on the infrastructure management scene recently and how we ended up like this. And also why I believe that things like Nomad and ECS are not quite a competition to Kubernetes nowadays"
-date: 2021-04-11
+date: 2021-04-12
 draft: false
 slug: "orchestrators"
 image: "https://www.networkcomputing.com/sites/default/files/styles/flexslider_full/public/1-intro_12_0.jpg?itok=a0sMEFXG"
