@@ -5,7 +5,7 @@ theme = "hugo-gentoo-theme"
 disqusShortname = "grem1in"
 googleAnalytics = "UA-142478515-1"
 
-copyright = "(c) 2017 Yurii's Rochniak Blog"
+copyright = "(c) 2021 Yurii's Rochniak Blog"
 canonifyurls = true
 paginate = 6
 enableInlineShortcodes = true
