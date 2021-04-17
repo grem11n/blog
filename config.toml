@@ -16,7 +16,7 @@ enableEmoji = true
   mainSections = ["post", "posts"]
   images = ["/img/card_iamge.jpg"]
   [params.welcome]
-      enable = true
+      enable = false
       image = "https://devopsdays.org/events/2019-kiev/organizers/yurii-rochniak.jpg"
       short = "Sup! My name is Yura. I'm SRE with the focus on infrastructure. Author of [CatOps](https://t.me/catops) Telegram channel. Opinions on my own"
       text = "Writing about tech, my life, and occasionally comic book reviews. Originally from Kyiv, but currently living in Berlin. Posts are in English and Russian"
