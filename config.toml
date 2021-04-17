@@ -2,7 +2,6 @@ baseURL = "/"
 languageCode = "en-us"
 title = "YR's Blog"
 theme = "hugo-gentoo-theme"
-disqusShortname = "grem1in"
 googleAnalytics = "UA-142478515-1"
 
 copyright = "(c) 2021 Yurii's Rochniak Blog"
@@ -16,25 +15,41 @@ enableEmoji = true
   description = "Site Reliability Engineer. Write a bit about life and tech. Opinions on my own"
   mainSections = ["post", "posts"]
   images = ["/img/card_iamge.jpg"]
+  [params.social]
+      twitter       = "grem11n"
+      github        = "grem11n"
+      telegram      = "catops"
+      goodreads     = "9974285-yura"
+      email         = "yrochnyak@gmail.com"
+      linkedin      = "yrochnyak/"
+      stackoverflow = "6099033/yurii-rochniak?tab=profile"
 
 [taxonomies]
   category = "categories"
   tag = "tags"
 
+[menu]
+  [[menu.global]]
+      name = "About"
+      url = "/about/"
+  
+  [[menu.global]]
+      name = "Talks"
+      url = "/talks/"
 
-[[menu.global]]
-    name = "About"
-    url = "/about/"
-
-[[menu.global]]
-    name = "Talks"
-    url = "/talks/"
-
-[params.social]
-    twitter       = "grem11n"
-    github        = "grem11n"
-    telegram      = "catops"
-    goodreads     = "9974285-yura"
-    email         = "yrochnyak@gmail.com"
-    linkedin      = "yrochnyak/"
-    stackoverflow = "6099033/yurii-rochniak?tab=profile"
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable = false
+    respectDoNotTrack = true
+    useSessionStorage = true
+  [privacy.disqus]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
