@@ -44,7 +44,7 @@ Also, I recommend you watch this video. It's old, but it's a great entry-level i
 
 {{< youtube "qRPNuT080Hk" >}}
 
-Also, you can look through [Velero documantation](https://velero.io/docs/). It provides a general overview of all its features as well as the instructions to configure it.
+Also, you can look through [Velero documantation](https://velero.io/docs/). It provides a general overview of all its features as well as the instructions to configure it. It's not always clear, but good enough to get the thing up and running.
 
 ## Others
 
@@ -68,7 +68,9 @@ Taking into account what's been said about ETCD snapshots, logical backups seem 
 
 Is super straightforward. You can simply use [the official Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/master/charts/velero) for that. Alternatively, you can use Velero CLI to install Velero, but I prefer the Helm way, especially if there is automation on top of Helm already.
 
-One thing that's not that obvious in the chart is plugin installation, though. Velero [uses plugins](https://velero.io/plugins/) cloud APIs and these plugins are installed using an [init container](https://github.com/vmware-tanzu/helm-charts/blob/master/charts/velero/values.yaml#L26) in the official chart. Without a plugin for your cloud provider, Velero will still startup, but won't be able to do anything meaningful. I actually spent some time figuring it out.
+One thing that's not that obvious in the chart is plugin installation, though. Velero [uses plugins](https://velero.io/plugins/) cloud APIs and these plugins are installed using an [init container](https://github.com/vmware-tanzu/helm-charts/blob/master/charts/velero/values.yaml#L26) in the official chart. Without a plugin for your cloud provider, Velero will still startup, but won't be able to do anything meaningful. I actually spent some time figuring it out. Unfortunately, there are not many examples in the values file. So, you have to consult with the documentation from time to time. Even then, though, you may not find examples for some exotic clouds and use cases.
+
+Speaking of plugins. This is a great way to ensure flexibility and extendability for your tool. But again, if you have an exotic setup, some plugins may be tricky to use. Also, there might be a lag between new Velero versions and the versions for some plugins. Although, if you're working with one of the major cloud providers, you should be covered.
 
 Also, depending on how do you allow the applications inside a cluster to connect to your cloud API, you may need to create an additional configuration for things like [IRSA](https://medium.com/getamis/aws-irsa-for-self-hosted-kubernetes-e045564494af) or [Kiam](https://github.com/uswitch/kiam). Alternatively, you can provide the credentials as a Kubernetes Secret, of course. However, I warn you not to do so!
 
@@ -85,3 +87,5 @@ However, the presence of your objects in ETCD doesn't mean that your services ar
 Of course, Kubernetes is an eventually consistent system. So, your cluster should be Ok in some time. Moreover, you probably can take those odds in case of a disaster. However, you need to keep in mind those caveats whenever you need to restore a cluster or migrate to a new one.
 
 This brings us the second part of this story: _does it even makes sense to back up a Kubernetes cluster?_
+
+_Many thanks to [Maksym Vlasov](https://www.linkedin.com/in/maxymvlasov/) for his inputs and editing efforts!_
