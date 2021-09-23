@@ -1,7 +1,7 @@
 ---
 title: "Velero"
 description: "Brief overview of Velero (former Heptio Ark) - a backup solution for Kuberentes. Part I of Kubernetes clusters backup story"
-date: 2021-09-22
+date: 2021-09-23
 draft: false
 slug: "velero"
 image: "/img/posts/velero/velero-tumb.png"
