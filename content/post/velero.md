@@ -20,11 +20,11 @@ _I'm going to add the links to the 2nd and the 3rd parts once I complete them._
 
 ## What's Velero?
 
-Velero (former Heptio Ark) is a tool for backing up the Kubernetes cluster state. Unlike direct ETCD backup, it communicates with ETCD via API and backs up assets as Kubernetes objects. Therefore, Velero is compliant with a generic approach i.e. it accesses ETCD via Kubernetes API.
+Velero (former Heptio Ark) is a tool for backing up the Kubernetes cluster state. Unlike direct etcd backup, it communicates with etcd via API and backs up assets as Kubernetes objects. Therefore, Velero is compliant with a generic approach i.e. it accesses etcd via Kubernetes API.
 
 Apart from the plain Kubernetes resources, Velero can also leverage your cloud's APIs to create snapshots of the PersistentVolues that are present in your cluster. It might be handy if you have stateful applications there.
 
-In a sense, Velero creates a logical backup of your assets, unlike a physical ETCD snapshot. It also provides its own CLI to manage backups and restores. Velero uses `CustomResourceDefinitions` for its operations. So, technically you can simply use `kubectl` instead. However, their CLI eases work with backup and restore objects, schedules, backup locations, etc.
+In a sense, Velero creates a logical backup of your assets, unlike a physical etcd snapshot. It also provides its own CLI to manage backups and restores. Velero uses `CustomResourceDefinitions` for its operations. So, technically you can simply use `kubectl` instead. However, their CLI eases work with backup and restore objects, schedules, backup locations, etc.
 
 ## Some Notable Features
 
@@ -48,21 +48,21 @@ Also, you can look through [Velero documantation](https://velero.io/docs/). It p
 
 ## Others
 
-I saw a few mentions on the Web that there are many similar solutions, but I personally managed to find only three reasonable alternatives: ETCD snapshot, [Kasten by K10](https://www.kasten.io/product/), and [Portworks](https://portworx.com/kubernetes-backup/).
+I saw a few mentions on the Web that there are many similar solutions, but I personally managed to find only three reasonable alternatives: etcd snapshot, [Kasten by K10](https://www.kasten.io/product/), and [Portworks](https://portworx.com/kubernetes-backup/).
 
 BTW, Portworx has written a kinda overview of Kubernetes cluster backup tools. However, part of those tools are not for backup at all, but for management of the persistent layer. Also, this is clearly a marketing write-up. I will leave [the link](https://portworx.com/kubernetes-backup-tools/) here, just to indicate that I saw this article and generally disagree with it.
 
-### Why not ETCD snapshot?
+### Why not etcd snapshot?
 
 This is a very good question. If your cluster is created with Kops, you likely have `etcd-manager` installed already. So, it's super simple to make a backup. You don't need any other tools for this as well. No CRDs, additional CLIs, etc.
 
 However, there are dragons. See, no one needs backups for the sake of backups. Their primary attribute is to be restorable. I know that all of us hope that the "restore day" will never come, but when it does you'd better be covered.
 
-And it happened to be that [restoring an ETCD backup is not the easiest process](https://rudimartinsen.com/2020/12/30/backup-restore-etcd/) there are [a few manual steps](http://www.opslib.com/2020/10/etcd-backup-and-restore-cka-exam.html) involved and you may need to restart ETCD pods in the process. This is Ok for the CKA exam, but in real life, you want to have as few manual steps as possible. Moreover, you would likely want to automate yourself from the backup and restore procedure at all! So, whoever happens to be a misfortunate person to deal with cluster restore has to simply trigger a CI job or something like that.
+And it happened to be that [restoring an etcd backup is not the easiest process](https://rudimartinsen.com/2020/12/30/backup-restore-etcd/) there are [a few manual steps](http://www.opslib.com/2020/10/etcd-backup-and-restore-cka-exam.html) involved and you may need to restart etcd pods in the process. This is Ok for the CKA exam, but in real life, you want to have as few manual steps as possible. Moreover, you would likely want to automate yourself from the backup and restore procedure at all! So, whoever happens to be a misfortunate person to deal with cluster restore has to simply trigger a CI job or something like that.
 
 ### Logical backups
 
-Taking into account what's been said about ETCD snapshots, logical backups seem like the best approach, IMHO. Velero does that. Kasten and Portworx do that as well. Both Kasten and Portworx are proprietary paid solutions, while Velero is open source. Yes, technically there is a free tier for Kasten, but you can have a maximum of 10 nodes in your cluster, which is a joke.
+Taking into account what's been said about etcd snapshots, logical backups seem like the best approach, IMHO. Velero does that. Kasten and Portworx do that as well. Both Kasten and Portworx are proprietary paid solutions, while Velero is open source. Yes, technically there is a free tier for Kasten, but you can have a maximum of 10 nodes in your cluster, which is a joke.
 
 ## Installation
 
@@ -76,13 +76,13 @@ Also, depending on how do you allow the applications inside a cluster to connect
 
 ## Velero in Action
 
-After you installed a new thing is the best time to test it! Remember, we are talking about logical backups here. 
+After you installed a new thing is the best time to test it! Remember, we are talking about logical backups here.
 
 We basically need to read data from the Kubernetes API, compact it, and store it in some pre-defined location. In general, these operations shouldn't take a long time and they don't. I have tried to back up a little bit more than 3600 various Kubernetes objects and it took less than 3 minutes in total!
 
 Restore is a different topic, though. Again, from Velero's perspective restore process is straightforward and happens in a few minutes as well. It reads files from the storage, unpacks them, and applies retrieved objects to Kubernetes API. Some hooks may be executed before and after, which can contribute to the overall restoration time, but it still doesn't take long to restore Kubernetes objects.
 
-However, the presence of your objects in ETCD doesn't mean that your services are running! Now it's time for the Kubernetes scheduler to take action to allocate actual resources. Things can go tricky here. How long does it take for your service to start? Are there many services that have to be restored? What are the relations between them? You will likely need to pull a lot of images into your freshly restored cluster, can your registry deal with it, are there any rate limits?
+However, the presence of your objects in etcd doesn't mean that your services are running! Now it's time for the Kubernetes scheduler to take action to allocate actual resources. Things can go tricky here. How long does it take for your service to start? Are there many services that have to be restored? What are the relations between them? You will likely need to pull a lot of images into your freshly restored cluster, can your registry deal with it, are there any rate limits?
 
 Of course, Kubernetes is an eventually consistent system. So, your cluster should be Ok in some time. Moreover, you probably can take those odds in case of a disaster. However, you need to keep in mind those caveats whenever you need to restore a cluster or migrate to a new one.
 
