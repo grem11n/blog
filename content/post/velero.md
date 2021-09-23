@@ -20,11 +20,11 @@ _I'm going to add the links to the 2nd and the 3rd parts once I complete them._
 
 ## What's Velero?
 
-Velero (former Heptio Ark) is a tool for backing up the Kubernetes cluster state. Unlike direct etcd backup, it communicates with etcd via API and backs up assets as Kubernetes objects. Therefore, Velero is compliant with a generic approach i.e. it accesses etcd via Kubernetes API.
+Velero (former Heptio Ark) is a tool for backing up the Kubernetes cluster state. Unlike direct etcd backup, Velero is compliant with a generic approach. it accesses etcd via Kubernetes API server and backs up assets as Kubernetes object.
 
-Apart from the plain Kubernetes resources, Velero can also leverage your cloud's APIs to create snapshots of the PersistentVolues that are present in your cluster. It might be handy if you have stateful applications there.
+Apart from the plain Kubernetes resources, Velero can also leverage your cloud's APIs to create snapshots of the Persistent Volues that are present in your cluster. It might be handy if you have stateful applications there.
 
-In a sense, Velero creates a logical backup of your assets, unlike a physical etcd snapshot. It also provides its own CLI to manage backups and restores. Velero uses `CustomResourceDefinitions` for its operations. So, technically you can simply use `kubectl` instead. However, their CLI eases work with backup and restore objects, schedules, backup locations, etc.
+In a sense, Velero creates a logical backup of your assets, unlike a physical etcd snapshot. It also provides its own CLI to manage backups and restores. Velero uses Custom Resource Definitions for its operations. So, technically you can simply use `kubectl` instead. However, their CLI eases work with backup and restore objects, schedules, backup locations, etc.
 
 ## Some Notable Features
 
@@ -32,7 +32,7 @@ Since we work with logical backups here, we can easily define which assets are e
 
 You can also create schedules for your backups, so they're taken automatically. As well as configure TTL for backup files, so Velero will keep track of your backup versions and clean up the old stuff.
 
-You can create snapshots of your PersistentVolumes, which can be handy if you're running some stateful applications in your cluster. However, I'm not a big fan of running any stateful things inside Kubernetes (more on this in Part III).
+You can create snapshots of your Persistent Volumes, which can be handy if you're running some stateful applications in your cluster. However, I'm not a big fan of running any stateful things inside Kubernetes (more on this in Part III).
 
 There are backup and restore hooks to do some actions before or after any of those operations. For example, you can stop a database service before creating a volume snapshot, so you can be sure of data integrity.
 
@@ -44,7 +44,7 @@ Also, I recommend you watch this video. It's old, but it's a great entry-level i
 
 {{< youtube "qRPNuT080Hk" >}}
 
-Also, you can look through [Velero documantation](https://velero.io/docs/). It provides a general overview of all its features as well as the instructions to configure it. It's not always clear, but good enough to get the thing up and running.
+Also, you can look through [Velero documentation](https://velero.io/docs/). It provides a general overview of all its features as well as the instructions to configure it. It's not always clear, but good enough to get the thing up and running.
 
 ## Others
 
@@ -54,7 +54,7 @@ BTW, Portworx has written a kinda overview of Kubernetes cluster backup tools. H
 
 ### Why not etcd snapshot?
 
-This is a very good question. If your cluster is created with Kops, you likely have `etcd-manager` installed already. So, it's super simple to make a backup. You don't need any other tools for this as well. No CRDs, additional CLIs, etc.
+This is a very good question. If your cluster is created with kops, you likely have `etcd-manager` installed already. So, it's super simple to make a backup. You don't need any other tools for this as well. No CRDs, additional CLIs, etc.
 
 However, there are dragons. See, no one needs backups for the sake of backups. Their primary attribute is to be restorable. I know that all of us hope that the "restore day" will never come, but when it does you'd better be covered.
 
