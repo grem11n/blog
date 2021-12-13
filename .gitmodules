@@ -1,3 +1,4 @@
-[submodule "themes/hugo-gentoo-theme"]
-	path = themes/hugo-gentoo-theme
-	url = https://github.com/grem11n/hugo-gentoo-theme.git
+[submodule "themes/papermod"]
+	path = themes/papermod
+	url = https://github.com/danielfdickinson/adityatelange-hugo-PaperMod.git
+	branch = pr-add-thumbnail-list-pages

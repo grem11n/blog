@@ -4,7 +4,9 @@ description: "Here I want to wrap up my thoughts and opinions on what's going on
 date: 2021-04-12
 draft: false
 slug: "orchestrators"
-image: "https://www.networkcomputing.com/sites/default/files/styles/flexslider_full/public/1-intro_12_0.jpg?itok=a0sMEFXG"
+cover:
+  image: "https://www.networkcomputing.com/sites/default/files/styles/flexslider_full/public/1-intro_12_0.jpg"
+  alt: "internet image"
 categories: ["Tech"]
 tags: ["en", "k8s", "kubernetes", "nomad"]
 ---

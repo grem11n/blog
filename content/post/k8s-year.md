@@ -4,7 +4,8 @@ description: "I’ve been using Kubernetes for almost a year and want to share s
 date: 2019-06-26T13:15:47+02:00
 draft: false
 slug: "k8s-year"
-image: "https://www.twistlock.com/wp-content/uploads/2017/01/kubernates-logo.jpg"
+cover:
+  image: "https://www.twistlock.com/wp-content/uploads/2017/01/kubernates-logo.jpg"
 categories: ["Tech"]
 tags: ["kubernetes", "eng"]
 ---

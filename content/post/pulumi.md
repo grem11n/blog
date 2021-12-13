@@ -4,7 +4,9 @@ description: "The first IaC tool in DevOps, which came from the Dev side"
 date: 2020-01-31
 draft: false
 slug: "pulumi"
-image: "https://www.pulumi.com/social/pulumi.png"
+cover:
+  image: "https://www.netclipart.com/pp/m/298-2984485_pulumi-logo-transparent.png"
+  alt: "pulumi logo"
 categories: ["Tech"]
 tags: ["pulumi", "iac", "eng"]
 ---

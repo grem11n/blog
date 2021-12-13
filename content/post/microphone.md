@@ -4,7 +4,9 @@ description: "If you have a lot of Zoom calls, which is something very common th
 date: 2021-03-27
 draft: false
 slug: "microphone"
-image: "/img/posts/microphone/cover.jpg"
+cover:
+  image: "/img/posts/microphone/cover.jpg"
+  relative: true
 categories: ["Life"]
 tags: ["en", "microphone", "review"]
 ---

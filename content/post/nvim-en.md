@@ -4,7 +4,8 @@ description: "Creating a NeoVim setup with neovim-qt on macOS"
 date: 2021-01-17
 draft: false
 slug: "nvim-en"
-image: "https://cdn.dribbble.com/users/2008/screenshots/1442436/mark-dribbble_1x.png"
+cover:
+  image: "https://cdn.dribbble.com/users/2008/screenshots/1442436/mark-dribbble_1x.png"
 categories: ["Tech"]
 tags: ["nvim", "neovim", "vim", "eng"]
 ---

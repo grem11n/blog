@@ -4,7 +4,8 @@ description: "I briefly went through the installation and configuration process 
 date: 2021-02-01
 draft: false
 slug: "crossplane"
-image: "/img/posts/crossplane/crossplane.png"
+cover:
+  image: "/img/posts/crossplane/crossplane.png"
 categories: ["Tech"]
 tags: ["kubernetes", "k8s", "iac", "crossplane"]
 ---

@@ -1,0 +1,137 @@
+baseURL: "/"
+title: YR's Blog
+paginate: 5
+theme: papermod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+googleAnalytics: "UA-142478515-1"
+
+minify:
+    disableXML: true
+    # minifyOutput: true
+
+languages:
+    en:
+        languageName: "English"
+        weight: 1
+        menu:
+            main:
+                - name: About
+                  url: about/
+                  weight: 5
+                - name: Tags
+                  url: tags
+                  weight: 10
+                - name: Categories
+                  url: categories
+                  weight: 10
+                - name: Talks
+                  url: talks/
+                  weight: 10
+                - name: Search
+                  url: search/
+                  weight: 20
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    description: "YR's Blog"
+    author: Yurii Rochniak
+    # author: ["Me", "You"] # multiple authors
+
+    defaultTheme: auto
+    # disableThemeToggle: true
+    ShowShareButtons: true
+    ShowReadingTime: true
+    # disableSpecial1stPost: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowToc: true
+    comments: false
+    images: ["img/card_image.jpg"]
+
+    cover:
+      hidden: false
+      hiddenInList: false
+      hiddenInSingle: true
+      responsiveImages: true
+      thumbnailInList: true
+
+    profileMode:
+        enabled: false
+
+    homeInfoParams:
+        Title: "Sup! My name is Yura"
+        Content: >
+            I'm an author of **[CatOps Telegram channel](https://t.me/catops)** about DevOps and other issues, but mostly DevOps.
+
+            - Working as SRE focusing on different infrastructure projects. Mostly Kubernetes related.
+
+            - Originally from Kyiv. Currently, located in Berlin.
+
+            - You can find more information about me on [the About](about/) page as well as my occasional [public talks here](talks/) (none of them is in English, though)
+
+    socialIcons:
+        - name: twitter
+          url: "https://twitter.com/grem11n"
+        - name: telegram
+          url: "https://t.me/catops"
+        - name: github
+          url: "https://github.com/grem11n"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/yrochnyak/"
+        - name: stackoverflow
+          url: "https://stackoverflow.com/users/6099033/yurii-rochniak?tab=profile"
+        - name: goodreads
+          url: "https://www.goodreads.com/user/show/9974285-yura"
+        - name: email
+          url: "mailto:yrochnyak@gmail.com"
+        - name: RsS
+          url: "index.xml"
+
+taxonomies:
+    category: categories
+    tag: tags
+      # series: series
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+
+privacy:
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: true
+    useSessionStorage: true
+  disqus:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: false
+    enableDNT: true
+  vimeo:
+    disable: false
+    enableDNT: true
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+services:
+    instagram:
+        disableInlineCSS: true
+    twitter:
+        disableInlineCSS: true
