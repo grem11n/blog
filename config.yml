@@ -1,7 +1,7 @@
 baseURL: "/"
-title: PaperMod
+title: YR's Blog
 paginate: 5
-theme: PaperMod
+theme: papermod
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -21,25 +21,8 @@ languages:
         weight: 1
         menu:
             main:
-                - name: Archive
-                  url: archives
-                  weight: 5
-                - name: Search
-                  url: search/
-                  weight: 10
-                - name: Tags
-                  url: tags/
-                  weight: 10
-                - name: Categories
-                  url: categories/
-                  weight: 10
-
-        menu:
-            main:
                 - name: About
                   url: about/
-                - name: Archive
-                  url: archives/
                   weight: 5
                 - name: Tags
                   url: tags
@@ -47,15 +30,12 @@ languages:
                 - name: Categories
                   url: categories
                   weight: 10
-                - name: Series
-                  url: series
+                - name: Talks
+                  url: talks/
                   weight: 10
-                - name: NullLink
-                  url: "#"
-                - name: NullLink2
-                  url: "#"
-                - name: NullLink3
-                  url: "#"
+                - name: Search
+                  url: search/
+                  weight: 20
 outputs:
     home:
         - HTML
@@ -78,8 +58,15 @@ params:
     ShowBreadCrumbs: true
     ShowCodeCopyButtons: true
     ShowToc: true
-    # comments: false
+    comments: false
     images: ["img/card_image.jpg"]
+
+    cover:
+      hidden: false
+      hiddenInList: false
+      hiddenInSingle: true
+      responsiveImages: true
+      thumbnailInList: true
 
     profileMode:
         enabled: false

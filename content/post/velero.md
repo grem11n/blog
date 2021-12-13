@@ -5,6 +5,9 @@ date: 2021-09-23
 draft: false
 slug: "velero"
 image: "/img/posts/velero/velero-tumb.png"
+cover:
+  image: "/img/posts/velero/velero-tumb.png"
+  relative: true
 categories: ["Tech"]
 tags: ["kubernetes", "k8s", "backup", "recovery", "velero"]
 ---
