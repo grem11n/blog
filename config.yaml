@@ -25,7 +25,7 @@ params:
         customText:
 
     dateFormat:
-        published: 2006-01-02 
+        published: 2006-01-02
         lastUpdated: 2006-01-02, 15:46 CET
 
     sidebar:
@@ -34,7 +34,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: static/img/card_iamge.jpg
+            src: img/card_iamge.jpg
 
     article:
         math: false
