@@ -34,7 +34,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: img/card_iamge.jpg
+            src: img/avatar.jpg
 
     article:
         math: false
@@ -93,6 +93,14 @@ menu:
           params:
               newTab: true
               icon: home
+
+        - identifier: about
+          name: About
+          url: /about/
+          weight: -90
+          params:
+              newTab: true
+              icon: user
     
     social:
         - identifier: github
