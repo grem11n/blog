@@ -5,7 +5,8 @@ draft: false
 description: "Воля: треш, угар и ура-патриотизм (обошлось без содомии)
 Небольшой обзорчик от меня по просьбам трудящихся. Осторожно спойлеры!"
 slug: "volia-comics"
-image: "https://cdn.igromania.ru/mnt/news/d/f/5/8/4/7/68969/a7bbe9f7ef626628_848x477.jpg"
+cover:
+  image: "https://cdn.igromania.ru/mnt/news/d/f/5/8/4/7/68969/a7bbe9f7ef626628_848x477.jpg"
 categories: ["Books"]
 tags: ["book", "review", "comics", "rus"]
 ---

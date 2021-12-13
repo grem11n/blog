@@ -4,7 +4,8 @@ date: 2019-06-19T14:49:52+03:00
 draft: false
 description: "Комикс про CCCР — “Среди овец” — хороший. И поэтому я сейчас начну его разваливать. Осторожно, спойлеры!"
 slug: "among-the-sheeps"
-image: "https://comiccon.kiev.ua/wp-content/uploads/2017/05/slides01.jpg"
+cover:
+  image: "https://comiccon.kiev.ua/wp-content/uploads/2017/05/slides01.jpg"
 categories: ["Books"]
 tags: ["book", "review", "comics", "rus"]
 ---

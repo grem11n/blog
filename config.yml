@@ -72,13 +72,31 @@ params:
         enabled: false
 
     homeInfoParams:
-        Title: "YR's Blog"
+        Title: "Sup! My name is Yura"
         Content: >
-            Hello there, it's Yura!
+            I'm an author of **[CatOps Telegram channel](https://t.me/catops)** about DevOps and other issues, but mostly DevOps.
+
+            - Working as SRE focusing on different infrastructure projects. Mostly Kubernetes related.
+
+            - Originally from Kyiv. Currently, located in Berlin.
+
+            - You can find more information about me on [the About](about/) page as well as my occasional [public talks here](talks/) (none of them is in English, though)
 
     socialIcons:
+        - name: twitter
+          url: "https://twitter.com/grem11n"
+        - name: telegram
+          url: "https://t.me/catops"
         - name: github
           url: "https://github.com/grem11n"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/yrochnyak/"
+        - name: stackoverflow
+          url: "https://stackoverflow.com/users/6099033/yurii-rochniak?tab=profile"
+        - name: goodreads
+          url: "https://www.goodreads.com/user/show/9974285-yura"
+        - name: email
+          url: "mailto:yrochnyak@gmail.com"
         - name: RsS
           url: "index.xml"
 

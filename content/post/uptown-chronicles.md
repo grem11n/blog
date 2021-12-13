@@ -4,7 +4,8 @@ date: 2019-06-20T00:31:28+03:00
 draft: false
 description: "Обзор Хроник Аптауна: недохранители на улицах Вышгорода. И да, спойлеры!"
 slug: "uptown-comics"
-image: "https://cdn-images-1.medium.com/max/2600/1*J78K17Ord-fTbJCLUU0YSQ.png"
+cover:
+  image: "https://cdn-images-1.medium.com/max/2600/1*J78K17Ord-fTbJCLUU0YSQ.png"
 categories: ["Books"]
 tags: ["book", "review", "comics", "rus"]
 ---
