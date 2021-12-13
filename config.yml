@@ -36,6 +36,8 @@ languages:
 
         menu:
             main:
+                - name: About
+                  url: about/
                 - name: Archive
                   url: archives/
                   weight: 5
