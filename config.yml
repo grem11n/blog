@@ -103,7 +103,7 @@ params:
 taxonomies:
     category: categories
     tag: tags
-    series: series
+      # series: series
 
 markup:
     goldmark:
