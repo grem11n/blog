@@ -1,0 +1,130 @@
+baseURL: "/"
+title: PaperMod
+paginate: 5
+theme: hugo-PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+googleAnalytics: "UA-142478515-1"
+
+minify:
+    disableXML: true
+    # minifyOutput: true
+
+languages:
+    en:
+        languageName: "English"
+        weight: 1
+        menu:
+            main:
+                - name: Archive
+                  url: archives
+                  weight: 5
+                - name: Search
+                  url: search/
+                  weight: 10
+                - name: Tags
+                  url: tags/
+                  weight: 10
+                - name: Categories
+                  url: categories/
+                  weight: 10
+
+        menu:
+            main:
+                - name: Archive
+                  url: archives/
+                  weight: 5
+                - name: Tags
+                  url: tags
+                  weight: 10
+                - name: Categories
+                  url: categories
+                  weight: 10
+                - name: Series
+                  url: series
+                  weight: 10
+                - name: NullLink
+                  url: "#"
+                - name: NullLink2
+                  url: "#"
+                - name: NullLink3
+                  url: "#"
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    description: "YR's Blog"
+    author: Yurii Rochniak
+    # author: ["Me", "You"] # multiple authors
+
+    defaultTheme: auto
+    # disableThemeToggle: true
+    ShowShareButtons: true
+    ShowReadingTime: true
+    # disableSpecial1stPost: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowToc: true
+    # comments: false
+    images: ["img/card_image.jpg"]
+
+    profileMode:
+        enabled: false
+
+    homeInfoParams:
+        Title: "YR's Blog"
+        Content: >
+            Hello there, it's Yura!
+
+    socialIcons:
+        - name: github
+          url: "https://github.com/grem11n"
+        - name: RsS
+          url: "index.xml"
+
+taxonomies:
+    category: categories
+    tag: tags
+    series: series
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+
+privacy:
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: true
+    useSessionStorage: true
+  disqus:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: false
+    enableDNT: true
+  vimeo:
+    disable: false
+    enableDNT: true
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+services:
+    instagram:
+        disableInlineCSS: true
+    twitter:
+        disableInlineCSS: true
