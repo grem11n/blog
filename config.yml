@@ -72,7 +72,7 @@ params:
         enabled: false
 
     homeInfoParams:
-        Title: "Sup! My name is Yura"
+        Title: "Sup! My name is Yura 👋"
         Content: >
             I'm an author of **[CatOps Telegram channel](https://t.me/catops)** about DevOps and other issues, but mostly DevOps.
 
