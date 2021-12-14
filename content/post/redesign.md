@@ -33,7 +33,8 @@ Yet, here are a few things that I wanted to update:
 
 1. Create a static “brief about” on the home page, like the one on the up-to-date site.
 2. Implement a light vs dark theme.
-3. Some minor tweaks. For example, code blocks in the old version had weird line spacing.
+3. Twitter cards and a pretty link preview in general.
+4. Some minor tweaks. For example, code blocks in the old version had weird line spacing.
 
 The first thing sounds not that complicated. I even started some work there. Unfortunately, it didn’t work well on all the screen dimensions. And then I didn’t have time to update CSS for it. And then I abandoned it :
 
