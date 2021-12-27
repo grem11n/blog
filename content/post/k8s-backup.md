@@ -10,6 +10,8 @@ categories: ["Tech"]
 tags: ["kubernetes", "k8s", "iac", "velero", "backup", "gitops", "en"]
 ---
 
+This is the second part of a series of articles regarding Kubernetes backups. You can find the first part [about Velero tool here](https://grem1.in/post/velero/).
+
 ##  Why Backup Kubernetes?
 In the [previous part](https://grem1.in/post/velero/) I provided a brief overview of the backup & restore tool for Kubernetes called Velero. Now, I would like to talk, why backup your cluster at all?
 
