@@ -1,6 +1,6 @@
 ---
 title: "Why backup Kubernetes?"
-description: "Let's talk about if you need to backup your cluster at all."
+#description: "Let's talk about if you need to backup your cluster at all."
 date: 2021-12-27
 draft: false
 slug: "k8s-backup"
