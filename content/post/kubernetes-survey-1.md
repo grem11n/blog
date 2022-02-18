@@ -44,7 +44,7 @@ In general, I expected more users of OpenShift out there. However, this is a tou
 
 ## Managed vs Own Clusters
 
-/Cloud vs self-hosted.jpeg
+{{< figure src="/img/posts/k8s-survey-1/Cloud vs self-hosted.jpeg" >}}
 
 - 71 respondents (69.6%) are using cloud solutions to run their clusters
 - 54 (52.9%) manage clusters on their own
