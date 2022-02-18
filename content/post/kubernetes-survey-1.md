@@ -15,6 +15,8 @@ Not so long ago, I created a survey to understand how people manage their Kubern
 
 You can find all the raw data [via this link](https://airtable.com/shrzJiOC2omRjZfxB).
 
+This text is also [available in Ukrainian](https://dou.ua/forums/topic/36560/).
+
 ## A backstory (skippable content)
 
 After, I wrote the article about Kubernetes backups - [Why backup Kubernetes?](https://grem1.in/post/k8s-backup/), I got a few questions about the cluster topology we use. Especially on the "cluster as cattle" concept and technical struggles associated with it. I started writing a follow-up article on that topic, but then I realized that my view is limited by the experience at just a few companies. Thus, I decided to ask people about how they manage their clusters. So, here we are.
