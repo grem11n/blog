@@ -4,7 +4,7 @@ date: 2022-02-26
 draft: false
 slug: "stand-with-ukraine"
 cover:
-  image: "/img/posts/stand-with-ukraine/stand-with-ukraine.png"
+  image: "/img/posts/stand-with-ukraine/flag.png"
 categories: ["Tech"]
 tags: ["war"]
 ---
