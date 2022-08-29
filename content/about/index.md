@@ -32,23 +32,3 @@ Also, subscribe to my Telegram Cahannel: [@CatOps](https://t.me/catops)
 **P.S.** If you would like to see an about page in more CV-like style, you can [find it here]({{< ref "/cv" >}} "My CV")
 
 ---
-
-Меня зовут Юра. Я работаю SRE и люблю писать о CICD и инфраструктуре. Вырос в Киеве, сейчас живу в Берлине.
-
-Посты на английском и русском.
-
-* Создатель и админ канала [@CatOps](https://t.me/catops) (на русском)
-* Принёс [HashiCorp User Group](https://www.meetup.com/Kyiv-HashiCorp-User-Group/) в Киев
-* Принёс Kubernetes в [Preply](https://preply.com/)
-* Помогаю [DevOps Days Kyiv](https://devopsdays.com.ua/)
-
-Если вы хотите мне написать:
-
-* Написать мне на: yrochnyak@gmail.com
-* Twitter: [@grem11n](https://twitter.com/grem11n)
-* LinkedIn: [yrochnyak](https://www.linkedin.com/in/yrochnyak/)
-* Telegram: [@grem1in](https://t.me/grem1in)
-
-И подписывайтесь на канал, конечно же: [@CatOps](https://t.me/catops)
-
-**P.S.**: Если вам интересно моё резюме, [оно находится здесь]({{< ref "/cv" >}} "My CV")

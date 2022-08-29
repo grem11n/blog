@@ -79,7 +79,7 @@ Master’s degree in telecommunication systems and networks
 ## Achievements & Interests:
 - Ecology. [Winner](https://climatelaunchpad.org/finalists/zamza/) of ClimateLaunchpad Ukrainian finals in 2016
 - Telegram channel about DevOps: https://t.me/catops
-- External articles: 
+- External articles:
     - [Lambda@Edge: run your code at CloudFront](https://bit.ly/2LiRjOJ) (eng)
     - [Why and how do we run Kubernetes on the Spot instances](https://bit.ly/2zYnCxF) (eng)
 - Public speaking:
