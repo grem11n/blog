@@ -87,6 +87,8 @@ params:
           url: "https://twitter.com/grem11n"
         - name: telegram
           url: "https://t.me/catops"
+        - name: substack
+          url: "https://catops.substack.com/"
         - name: github
           url: "https://github.com/grem11n"
         - name: linkedin
