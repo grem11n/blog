@@ -74,7 +74,7 @@ params:
     homeInfoParams:
         Title: "Sup! My name is Yura 👋"
         Content: >
-            I'm an author of **[CatOps Telegram channel](https://t.me/catops)** about DevOps and other issues, but mostly DevOps.
+            I'm an author of **[CatOps Telegram channel](https://t.me/catops)** and **[a Newsletter](https://catops.substack.com/)** about DevOps and other issues, but mostly DevOps.
 
             - Working as SRE focusing on different infrastructure projects. Mostly Kubernetes related.
 

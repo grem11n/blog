@@ -13,21 +13,20 @@ Previously: [Preply](https://preply.com/), [Adobe Advertising Cloud](https://adv
 
 Originally from Kyiv. Currently, located in Berlin.
 
-Post in English and Russian.
-
 * Creator and admin of the [@CatOps](https://t.me/catops) Telegram channel
+* [CatOps Newsletter](https://catops.substack.com/) on Substack
 * Brought [HashiCorp User Group](https://www.meetup.com/Kyiv-HashiCorp-User-Group/) to Kyiv
 * Brought Kubernetes to [Preply](https://preply.com/)
 * Do some little help for [DevOps Days Kyiv](https://devopsdays.com.ua/)
 
 If you have any questions or feedback, feel free to contact me on:
 
-* Write an email to: yrochnyak@gmail.com
+* Write me an email to: yrochnyak@gmail.com
 * Twitter: [@grem11n](https://twitter.com/grem11n)
 * LinkedIn: [yrochnyak](https://www.linkedin.com/in/yrochnyak/)
 * Telegram: [@grem1in](https://t.me/grem1in)
 
-Also, subscribe to my Telegram Cahannel: [@CatOps](https://t.me/catops)
+Also, make sure to subscribe to my Telegram Cahannel: [@CatOps](https://t.me/catops) and the [CatOps Newsletter](https://catops.substack.com/) on Substack!
 
 **P.S.** If you would like to see an about page in more CV-like style, you can [find it here]({{< ref "/cv" >}} "My CV")
 
