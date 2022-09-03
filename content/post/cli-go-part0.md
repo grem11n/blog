@@ -73,4 +73,6 @@ With these three criteria in mind, I started working on S3BC. Let’s see if it 
 
 ## Los geht’s
 
-With this being said, see you in Part 1, where I’m talking about some initial setup and the first steps of building a CLI app with Go!
+With this being said, see you in Part 1, where I’m talking about some initial setup and the first steps of building a CLI app with Go.
+
+In the meantime you can subscribe to the [CatOps Telegram channel](https://t.me/catops) and [CatOps Newsletter](https://catops.substack.com/), so you don't miss the next part!
