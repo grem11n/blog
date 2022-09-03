@@ -32,7 +32,7 @@ Who automates the automation?
 ----
 Kubernetes "automation" tools require some gruntwork. For example, a very popular cluster management tool -- [kops](https://github.com/kubernetes/kops) requires setting up [IAM, DNS, and configuration storage](https://github.com/kubernetes/kops/blob/master/docs/aws.md) in advance. Be sure you have scripted these things as well.
 
-{{< tweet 1114007653011689472 >}}
+{{< tweet user="krisnova" id="1114007653011689472" >}}
 
 Basically, you can say that you have a fully automated cluster setup only if you can terminate a cluster with one command or a script run and then bring it back the same way ¯\\\_(ツ)\_/¯
 
@@ -40,7 +40,7 @@ Managed solutions to the rescue!
 ----
 There are plenty of managed solutions for Kubernetes nowadays. All the major cloud providers have them. Of course, a managed solution limits your freedom: you cannot change API server configuration, probably change the network plugin, etc. But here is the trick! _**Running your own control plane likely won't add any business value**_. Unless, you have some specific scenario and you understand what you're doing.
 
-{{< tweet 1059632684098478080 >}}
+{{< tweet user="jessitron" id="1059632684098478080" >}}
 
 Speaking further about the value. You don't want just a cluster on its own. Eventually, you will need things like Ingress controller, monitoring & logging stack (including monitoring & logging of the cluster itself), [cluster-autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler), perhaps even a service mesh, etc. There are tons of tutorials on how to set up all of these. A lot of things could be installed with a simple `helm install ...` command, but there is a catch!
 
