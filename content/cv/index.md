@@ -6,6 +6,8 @@ draft: false
 
 {{< figure src="https://devopsdays.org/events/2019-kiev/organizers/yurii-rochniak.jpg" align="right" >}}
 
+_[Download the PDF](https://github.com/grem11n/blog/raw/master/static/files/Yurii_Rochniak_CV.pdf)_
+
 ## Contacts
 
 * yrochnyak@gmail.com
@@ -29,16 +31,16 @@ draft: false
 #### January 2018 - June 2019: [Preply](https://preply.com) (A global language learning platform) - CloudOps Engineer
 - Decreased the deploy time of a monolith application from 30 to 10 minutes by a migration from **AWS Elastic Beanstalk** to **Kubernetes**
 - Increased time to market for the new features from 1 deploy in a few days to a couple of deploys a day by implementing a CI/CD platform based on **Jenkins** and implementing dynamic feature environments for product engineers in **Kubernetes**
-- Improved the overall opearability of the infrastructure by adopting IaC approach with **Terraform**
+- Improved the infrastructure operations by adopting IaC approach with **Terraform**
 - Increased MTTR by adopting **DataDog** as an observability solution
 - Reduced infrastructure costs by adopting **AWS Spot instances** for **Jenkins** agents and non-production **Kubernetes** nodes
-- Increased team's throughtput by adopting **Kanban** methodology
+- Increased team's throughput by adopting **Kanban** methodology
 - Pioneered the incident management process including the culture of post-mortems
 
-#### Spetember 2016 - January 2018: [Adobe Advertising Cloud (ex-TubeMogul)](https://advertising.adobe.com/) (Demand-side platform for online advertising) - Systems Engineer
+#### September 2016 - January 2018: [Adobe Advertising Cloud (ex-TubeMogul)](https://advertising.adobe.com/) (Demand-side platform for online advertising) - Systems Engineer
 - Improved the automation of the existing infrastructure in **AWS** and **OpenStack** using **Terraform** and **Puppet**
 - Ensured the stability of internal systems by providing operational and oncall support using **Nagios** and **Sensu**
-- Improved monitoring of various subsistems by writing native **Sensu** monitors in **Ruby**
+- Improved monitoring of various subsystems by writing native **Sensu** monitors in **Ruby**
 
 #### October 2014 - September 2015: [VoIPlatinum](https://portal.voiplatinum.com/) (International VoIP provider) - Support Engineer
 - Reduced MTTR of the internal office network from several minutes to a few seconds by implementing a router with automated failover to the secondary ISP based on a **Linux** machine
@@ -71,7 +73,7 @@ National Technical University of Ukraine “Kyiv Polytechnic Institute.” [Inst
 ## Volunteer experience:
 - 2016: Teacher in IT Arts educational project. Subject: cloud technologies
 - 2012 - 2015: Student magazine "KPIshnik". Editor-in-chief / columnist
-- 2010 - 2011: "Provider Turboty" charity project. We have created a computer class in “Otchiy Dim” near Kyivand tought computer basics to the children there for half a year.
+- 2010 - 2011: "Provider Turboty" charity project. We have created a computer class in “Otchiy Dim” near Kyiv and taught computer basics to the children there for half a year.
 ---
 
 ## Achievements & Interests:
@@ -82,3 +84,5 @@ National Technical University of Ukraine “Kyiv Polytechnic Institute.” [Inst
     - [Why and how do we run Kubernetes on the Spot instances](https://bit.ly/2zYnCxF) (eng)
 - [Public speaking](https://grem1.in/talks/)
 ---
+
+_[Download the PDF](https://github.com/grem11n/blog/raw/master/static/files/Yurii_Rochniak_CV.pdf)_
