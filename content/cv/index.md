@@ -21,6 +21,7 @@ _[Download the PDF](https://github.com/grem11n/blog/raw/master/static/files/Yuri
 #### July 2019 - present: [N26](https://n26.com) (Online bank) - Lead SRE
 
 - Improved the predictability of the team's deliverables by managing team priorities according to the **OKR framework**
+- Helped to scale the platform team to more than 20 engineers by participating in the interview process
 - Improved the visibility of some **Kubernetes** components' reliability by introducing **SLOs**
 - Decreased the time to create a full-functional **Kubernetes** cluster to ~30 minutes and a single command by creating a CLI cluster-management tool in **Go**
 - Reduced operational burden for product engineers by abstracting 2 **Terraform** IaC with **Kubernetes operators**
