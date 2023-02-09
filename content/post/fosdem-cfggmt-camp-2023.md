@@ -1,6 +1,6 @@
 ---
 title: "My Notes from Fosdem & Config Management Camp 2023"
-date: 2023-02-10
+date: 2023-02-09
 draft: false
 slug: "fosdem-cfgmgmt-camp-2023"
 cover:
