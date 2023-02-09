@@ -13,6 +13,8 @@ tags: ["event", "conference", "fosdem", "cfgmgmt"]
 
 {{< figure src="/img/posts/fosdem2023/fosdem-blog-logo.png" >}}
 
+_[Read on Substack](https://catops.substack.com/p/my-notes-from-fosdem-and-config-management)_.
+
 Sup! It’s been a while.
 
 So, both [Fosdem](https://fosdem.org/2023/) and [Config Management Camp](https://cfgmgmtcamp.eu/ghent2023/) conferences are back offline. Thus, I've spent a long weekend at my usual Belgian conferences.
