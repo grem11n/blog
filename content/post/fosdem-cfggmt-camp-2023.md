@@ -4,12 +4,15 @@ date: 2023-02-10
 draft: false
 slug: "fosdem-cfgmgmt-camp-2023"
 cover:
-  image: "/img/posts/fosdem2023/fosdem-blog-cover.png"
+  image: "/img/posts/fosdem2023/fosdem-blog-logo.png"
 categories: ["Tech"]
 tags: ["event", "conference", "fosdem", "cfgmgmt"]
 ---
 
 # My Notes from Fosdem & Config Management Camp
+
+{{< figure "/img/posts/fosdem2023/fosdem-blog-logo.png" >}}
+
 
 Sup! It’s been a while.
 
