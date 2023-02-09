@@ -11,8 +11,7 @@ tags: ["event", "conference", "fosdem", "cfgmgmt"]
 
 # My Notes from Fosdem & Config Management Camp
 
-{{< figure "/img/posts/fosdem2023/fosdem-blog-logo.png" >}}
-
+{{< figure src="/img/posts/fosdem2023/fosdem-blog-logo.png" >}}
 
 Sup! It’s been a while.
 
@@ -276,4 +275,4 @@ Well, that's all, folks! The third day of the Configuration Management Camp (or 
 
 I hope, you have enjoyed this recap! The next conference I plan to attend will be [KubeCon Europe 2023](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/). If you're also going there and want to have a chat, don't hesitate to ping me. My contacts are [here](https://grem1.in/about/).
 
-{{< figure src="https://www.vhv.rs/dpng/d/511-5117046_thats-all-folks-thats-all-folks-meme-hd.png" align="center" >}}
+{{< figure src="/img/posts/fosdem2023/ending.png" align="center" >}}
