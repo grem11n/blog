@@ -32,8 +32,6 @@ Who automates the automation?
 ----
 Kubernetes "automation" tools require some gruntwork. For example, a very popular cluster management tool -- [kops](https://github.com/kubernetes/kops) requires setting up [IAM, DNS, and configuration storage](https://github.com/kubernetes/kops/blob/master/docs/aws.md) in advance. Be sure you have scripted these things as well.
 
-{{< tweet user="krisnova" id="1114007653011689472" >}}
-
 Basically, you can say that you have a fully automated cluster setup only if you can terminate a cluster with one command or a script run and then bring it back the same way ¯\\\_(ツ)\_/¯
 
 Managed solutions to the rescue!
