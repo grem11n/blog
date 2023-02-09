@@ -3,7 +3,7 @@
   command = "hugo --gc --minify"
 
 [build.environment]
-  HUGO_VERSION = "0.98.0"
+  HUGO_VERSION = "v0.110.0"
 
 [context.production.environment]
   HUGO_BASEURL = "https://grem1.in/"
