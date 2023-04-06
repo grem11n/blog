@@ -56,10 +56,6 @@ Frankly, there are many motivating factors to write some lightweight projects in
 
 ## Now, back to the current project
 
-When choosing what to do here, I used the same ideas that ThePrimeagen revealed in his video on pet projects.
-
-{{< youtube KjjjQSSbhfU >}}
-
 Here are the top three features of a good pet project in my opinion:
 - Improve skills relevant to your career or be an opportunity to learn those. It doesn’t make sense to build a React application if you have no intentions to move to Web development.
 - Do not non-overwhelm yourself. [Feature creep](https://en.wikipedia.org/wiki/Feature_creep) kills even commercial products. Let’s be honest with ourselves: it doesn’t make sense to start a new OS unless you have strong motivation to finish it. Otherwise, this would become yet another semi-finished abandoned project on GitHub.
