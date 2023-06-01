@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes Operations Survey 2023"
-date: 2023-05-29
+date: 2023-06-02
 draft: false
 slug: "k8s-survey-2023"
 cover:
