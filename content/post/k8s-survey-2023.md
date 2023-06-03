@@ -12,8 +12,10 @@ tags: ["kubernetes", "k8s", "en", "survey", "catops"]
 # Annual Kubernetes Survey by CatOps
 
 It is the second time I run this survey. You can find the previous year's results [here](https://grem1.in/post/k8s-survey-2022-1/). 
-
 You can find the raw data [in the Google Sheets](https://docs.google.com/spreadsheets/d/1rR8bcKi1NnQpbnOA9zVK6IhV89hTr4aJdi8O3Rcb-mY/edit?usp=sharing).
+You can also [read this article on Substack](https://newsletter.catops.dev/p/kubernetes-operations-survey-2023).
+
+## Introduction
 
 This year, I ran this survey for two months: from the 14th of March to the 18th of May, and gathered 122 responses in total. Yet, I must admit that I only promoted this survey for a month. There are more responses than the last year (122 vs. 102). Some of the channels to share this survey were different this time. Also, I started later than the previous year (spring vs winter). Although, this difference should not impact the results.
 
