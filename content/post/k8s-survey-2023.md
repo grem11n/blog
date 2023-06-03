@@ -13,7 +13,7 @@ tags: ["kubernetes", "k8s", "en", "survey", "catops"]
 
 It is the second time I run this survey. You can find the previous year's results [here](https://grem1.in/post/k8s-survey-2022-1/). 
 
-You can find the raw data [in the Google Sheet](https://docs.google.com/spreadsheets/d/1rR8bcKi1NnQpbnOA9zVK6IhV89hTr4aJdi8O3Rcb-mY/edit?usp=sharing).
+You can find the raw data [in the Google Sheets](https://docs.google.com/spreadsheets/d/1rR8bcKi1NnQpbnOA9zVK6IhV89hTr4aJdi8O3Rcb-mY/edit?usp=sharing).
 
 This year, I ran this survey for two months: from the 14th of March to the 18th of May, and gathered 122 responses in total. Yet, I must admit that I only promoted this survey for a month. There are more responses than the last year (122 vs. 102). Some of the channels to share this survey were different this time. Also, I started later than the previous year (spring vs winter). Although, this difference should not impact the results.
 
@@ -25,7 +25,7 @@ I provide the absolute number of responders and the percentage for each answer. 
 
 {{< figure src="/img/posts/k8s-survey-2023/01_number-of-clusters.png" >}}
 
-48 (39.3%) of responders use multiple static clusters for different teams or departments. This number has grown since the last year. 29 (28%) of the responders selected this answer previous year. The percentage of people using a single static cluster per environment also increased: 35 (34%) in 2022 vs. 44 (36.1%) in 2023.
+48 (39.3%) of responders use multiple static clusters for different teams or departments. This number has grown since the last year. 29 (28%) of the responders selected this answer the previous year. The percentage of people using a single static cluster per environment also increased: 35 (34%) in 2022 vs. 44 (36.1%) in 2023.
 
 18 (14.8%) of responders mentioned that they use dynamic on-demand clusters.
 
@@ -169,7 +169,7 @@ Speaking of the tools people use to install the core components:
 - Helm is in first place with 89 (73%) users.
 - Terraform is in second place with 82 (67.2%)
 - ArgoCD is the third with 47 (38.5%)
-- FluxCD is twice less popular than ArgoCD, with 21 (17.2%) users
+- FluxCD is twice less popular as ArgoCD, with 21 (17.2%) users
 - Unsurprisingly, there is a tail of other tools that people use to automate the installations of the plugins.
 
 {{< figure src="/img/posts/k8s-survey-2023/14_core-tools.png" >}}
