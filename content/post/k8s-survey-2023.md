@@ -51,11 +51,11 @@ And my favorite reason:
 
 > Company is stupid
 
+## Cloud-Managed Solutions
+
 96 (78.7%) of the responders use a cloud-managed solution. 51 (41.8%) manage the clusters on their own and only 3 (2.5%) have a 3rd-party vendor to manage the clusters for them.
 
 {{< figure src="/img/posts/k8s-survey-2023/03_cloud-clusters.png" >}}
-
-## Cloud-Managed Solutions
 
 {{< figure src="/img/posts/k8s-survey-2023/04_cloud-vendors.png" >}}
 
