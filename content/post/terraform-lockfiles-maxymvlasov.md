@@ -10,7 +10,7 @@ categories: ["Tech"]
 tags: ["terraform", "hashicorp", "en", "guest"]
 ---
 
-_**This is the first guest article in this blog. This is one is by Maksym Vlasov - my co-author of the [CatOps channel](https://t.me/catops).**_
+_**This is the first guest article in this blog. This is one is by [Maksym Vlasov](https://www.linkedin.com/in/maxymvlasov/) - my co-author of the [CatOps channel](https://t.me/catops).**_
 
 ## Pre-history
 
@@ -432,6 +432,8 @@ repos:
     hooks:
       # Validate and run `terraform init` which needed for terraform_providers_lock
       - id: terraform_validate
+        args:
+          - --hook-config=--retry-once-with-cleanup=true
       - id: terraform_providers_lock
         args:
           - --hook-config=--mode=only-check-is-current-lockfile-cross-platform
