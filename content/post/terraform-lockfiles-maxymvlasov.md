@@ -376,17 +376,14 @@ Yes, I heard about Renovate and dependabot. Check out, my talks about Renovate a
 
 We don't use dependabot for the infrastructure repository because it has too many problems with monorepos, you can't simply [force `dependabot.yml` for the whole organization](https://heyko.medium.com/automated-dependabot-configuration-in-github-bb08e2c6eeeb), it is less configurable than Renovate, etc.
 
-<details><summary>GitHub itself does not use dependabot properly in its repositories...</summary>
+GitHub itself does not use dependabot properly in its repositories...
 
 * A newly generated repository from [actions/typescript-action](https://github.com/actions/typescript-action) contains
 
     {{< figure alt="Newly generated repo dependabot PR" src="/img/posts/terraform-lockfiles-maxymvlasov/newly-generated-repo.jpg" >}}
-
 * Dependabot PR is there for 2 weeks!
 
     {{< figure alt="How long can a dependabot PR live without any attention" src="/img/posts/terraform-lockfiles-maxymvlasov/github-dependabot-alert-long-live.png" >}}
-
-</details>
 
 I maintain Renovate for my organization here: [Sharable Config Presets for Renovatebot, especially useful for DevOps folks](https://github.com/SpotOnInc/renovate-config/). Also, Renovate has a [`lockFileMaintenance`](https://docs.renovatebot.com/configuration-options/#lockfilemaintenance) option but...
 
