@@ -460,3 +460,5 @@ Here are a few takeaways:
 * It's better to have lockifles than have no (repeatability, security)
 * It makes sense to automate all these updates and maintain the same versions across the codebase, and be on the cutting edge without bleeding ([Renovate](https://github.com/renovatebot/renovate), [dependabot](https://github.com/dependabot/dependabot-core), [tfupdate via pre-commit](https://github.com/antonbabenko/pre-commit-terraform/#tfupdate))
 * For a better user experience, you need a source of truth (automated `terraform plan` in CI, Terratests, etc.) which shows that changes do not break anything. It can be [Atlantis](https://github.com/runatlantis/atlantis), [Spacelift](https://spacelift.io/), [Terraform Cloud](https://www.hashicorp.com/products/terraform), or you can do it in your own CI.
+
+_** If you want to publish your article here as well, just ping me. My contacts are all over this blog.**_
