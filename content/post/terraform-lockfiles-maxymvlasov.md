@@ -1,7 +1,7 @@
 ---
 title: "How to add, use, and update `.terraform.lock.hcl` without pain"
 date: 2023-06-20
-author: ["Maxym Vlasov"]
+author: ["Maksym Vlasov"]
 draft: false
 slug: "terraform-lockfiles-maxymvlasov"
 cover:
@@ -10,7 +10,7 @@ categories: ["Tech"]
 tags: ["terraform", "hashicorp", "en", "guest"]
 ---
 
-_**This is the first guest article in this blog. This is one is by [Maxym Vlasov]() - my co-author of the [CatOps channel](https://t.me/catops).**_
+_**This is the first guest article in this blog. This is one is by Maksym Vlasov - my co-author of the [CatOps channel](https://t.me/catops).**_
 
 ## Pre-history
 
