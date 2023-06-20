@@ -1,6 +1,7 @@
 ---
 title: "How to add, use, and update `.terraform.lock.hcl` without pain"
 date: 2023-06-20
+author: ["Maxym Vlasov"]
 draft: false
 slug: "terraform-lockfiles-maxymvlasov"
 cover:
