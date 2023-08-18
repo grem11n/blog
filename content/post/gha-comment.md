@@ -24,11 +24,10 @@ First, you should set [the trigger action](https://docs.github.com/en/actions/us
 ```yaml
 name: My Comment-based Pipeline
 on:
- issue_comment:
- types:
- - created
+  issue_comment:
+    types:
+      - created
 ...
-
 ```
 
 You can run workflows on events other than `create`, but you likely do not need that.
@@ -45,10 +44,10 @@ Luckily, it's easy to do with the conditionals:
 ```yaml
 ...
 jobs:
- long-job:
- name: A long job that only runs on a specific PR comment
- if: ${{ github.event.issue.pull_request && github.event.comment.body == '/build' }}
- steps:
+  long-job:
+    name: A long job that only runs on a specific PR comment
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/build' }}
+    steps:
 ...
 ```
 
@@ -60,12 +59,12 @@ You can manage the emojis with GitHub CLI which provides direct access to GraphQ
 
 ```yaml
 ...
-  steps:
-    - name: Put a reaction to the comment
-      run: gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_ID: ${{ github.event.comment.node_id }}
+    steps:
+      - name: Put a reaction to the comment
+        run: gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_ID: ${{ github.event.comment.node_id }}
 ...
 ```
 
@@ -73,9 +72,9 @@ Let's focus on this code snippet a bit more. I do not have much experience with 
 
 A GraphQL request contains its type: `query` or `mutation` as well as arguments required for this request. We can break down our "AddReaction" request like this:
 
-```json
+```
 mutation AddReaction {	<-- request type and arbitrary name for it
-    addReaction( <-- the mutation itself. [See the docs](https://docs.github.com/en/graphql/reference/mutations#addreaction).
+    addReaction( <-- the mutation itself. See: https://docs.github.com/en/graphql/reference/mutations#addreaction
         input:{
             subjectId: "$NODE_ID",	<-- GraphQL node ID for the triggering comment. Notice _this is not the same as the REST comment it!_
             content: EYES <-- Emoji name
@@ -99,24 +98,24 @@ Another caveat is that by default GHA builds the workflow for any pull request. 
 
 ```yaml
 ...
-    - name: Check if PR is open
-      run: |
-        STATE=$(gh pr view $PR_NUMBER --repo ${{ github.repository }} --json state --jq .state)
-        if [ "$STATE" != "OPEN" ]; then
-          echo "Cannot build for closed PRs"
-          (
-            echo "**${{ github.workflow }}**"
-            echo "Cannot build Kuby for a closed PR. Use the `latest` version (built for the `master` branch) or create a new PR."
-          ) | \
-          gh pr comment "${PR_NUMBER}" --repo ${{ github.repository }} -F -
-          gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:THUMBS_DOWN}){reaction{content}subject{id}}}"
-          gh api graphql --silent --raw-field query="mutation RemoveReaction {removeReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
-          exit 1
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PR_NUMBER: ${{ github.event.issue.number }}
-        NODE_ID: ${{ github.event.comment.node_id }}
+      - name: Check if PR is open
+        run: |
+          STATE=$(gh pr view $PR_NUMBER --repo ${{ github.repository }} --json state --jq .state)
+          if [ "$STATE" != "OPEN" ]; then
+            echo "Cannot build for closed PRs"
+            (
+              echo "**${{ github.workflow }}**"
+              echo "Cannot build Kuby for a closed PR. Use the `latest` version (built for the `master` branch) or create a new PR."
+            ) | \
+            gh pr comment "${PR_NUMBER}" --repo ${{ github.repository }} -F -
+            gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:THUMBS_DOWN}){reaction{content}subject{id}}}"
+            gh api graphql --silent --raw-field query="mutation RemoveReaction {removeReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
+            exit 1
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          NODE_ID: ${{ github.event.comment.node_id }}
 ...
 ```
 
@@ -134,22 +133,22 @@ Yet, once all the work is done you may want to notify your user. Remember, GitHu
 
 ```yaml
 ...
-    - name: Final Comment
-      run: |
-        gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:THUMBS_UP}){reaction{content}subject{id}}}"
-        gh api graphql --silent --raw-field query="mutation RemoveReaction {removeReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
-        (
-          echo "**${{ github.workflow }}**"
-          echo "The long task is done!"
-          echo
-          echo "You can find the workflow here:"
-          echo "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-        ) | \
-        gh pr comment "${PR_NUMBER}" --repo ${{ github.repository }} -F -
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PR_NUMBER: ${{ github.event.issue.number }}
-        NODE_ID: ${{ github.event.comment.node_id }}
+      - name: Final Comment
+        run: |
+          gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:THUMBS_UP}){reaction{content}subject{id}}}"
+          gh api graphql --silent --raw-field query="mutation RemoveReaction {removeReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
+          (
+            echo "**${{ github.workflow }}**"
+            echo "The long task is done!"
+            echo
+            echo "You can find the workflow here:"
+            echo "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          ) | \
+          gh pr comment "${PR_NUMBER}" --repo ${{ github.repository }} -F -
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          NODE_ID: ${{ github.event.comment.node_id }}
 ...
 ```
 
@@ -196,7 +195,10 @@ This way, we ensure that:
 - This job runs even if the prerequisite defined with `needs` has failed. `always()` stands for that.
 - At the same time, we only want to execute this code on failures. Thus, `&& contains(needs.*.result, 'failure')` part.
 
-So, the resulting pipeline looks somewhat like this:
+So, the resulting pipeline looks somewhat like below.
+
+
+<details><summary>Click here to expand</summary>
 
 ```yaml
 name: My Comment-based Pipeline
@@ -281,5 +283,8 @@ jobs:
           PR_NUMBER: ${{ github.event.issue.number }}
           NODE_ID: ${{ github.event.comment.node_id }}
 ```
+
+</details>
+
 
 That's all, folks! Hope this content was useful to you. Frankly, this task required me to do some research on GitHub Actions and GitHub's GraphQL API. I also hit some road bumps along the way. Unfortunately, I haven't found any step-by-step guide for building such workflows even though this use case seems common. Thus, I decided to create one! I hope you enjoyed it!
