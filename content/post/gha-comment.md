@@ -6,7 +6,7 @@ slug: "gha-comment-trigger"
 cover:
   image: "https://techworm.net/programming/wp-content/uploads/2018/10/github-actions.jpg"
 categories: ["Tech"]
-tags: ["cicd", "github", "actions"]
+tags: ["cicd", "github", "actions", "graphql"]
 ---
 
 # How to Trigger a GitHub Actions Pipeline with a Comment
