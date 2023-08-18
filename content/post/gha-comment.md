@@ -19,6 +19,8 @@ Usually, you create a pull request event and your CI kicks in. Yet, it can be ha
 
 There are a couple of caveats with comment-based pipelines, which I want to discuss here. I will try to create an [Atlantis](https://www.runatlantis.io/)-like workflow for an arbitrary PR using GitHub Actions. These caveats are in _italics_, so you can just look for them in the text if you don't want to read everything.
 
+## Building the Workflow
+
 First, you should set [the trigger action](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#issue_comment) for your pipeline to the `issue_comment`.
 
 ```yaml
@@ -195,6 +197,8 @@ This way, we ensure that:
 - This job runs even if the prerequisite defined with `needs` has failed. `always()` stands for that.
 - At the same time, we only want to execute this code on failures. Hence, the `&& contains(needs.*.result, 'failure')` part.
 
+## The End Results
+
 So, the resulting pipeline looks somewhat like below.
 
 ```yaml
@@ -282,3 +286,15 @@ jobs:
 ```
 
 That's all, folks! Hope this content was useful to you. Frankly, this task required me to do some research on GitHub Actions and GitHub's GraphQL API. I also hit some road bumps along the way. Unfortunately, I haven't found any step-by-step guide for building such workflows even though this use case seems common. Thus, I decided to create one! I hope you enjoyed it!
+
+## Useful Links
+
+- [GitHub CLI Manual](https://cli.github.com/manual/)
+- [GH Look](https://github.com/LangLangBart/gh-look/) - a tool from which I have borrowed the idea to use GraphQL API for emojis
+- [GitHub GraphQL API Docs](https://docs.github.com/en/graphql)
+- [Forming calls with GraphQL](https://docs.github.com/en/graphql/guides/forming-calls-with-graphql)
+- [GitHub Actions: Using conditions to control job execution](https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution)
+- [Trigger a github workflow if it matches a particular comment in the Pull Request](https://github.com/orgs/community/discussions/25389)
+- [Issue_comment trigger event](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#issue_comment)
+- [Using the GitHub CLI on a runner](https://docs.github.com/en/actions/examples/using-the-github-cli-on-a-runner)
+- [GitHub actions get URL of test build](https://stackoverflow.com/questions/59073850/github-actions-get-url-of-test-build)
