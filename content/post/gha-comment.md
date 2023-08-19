@@ -15,7 +15,7 @@ Building comment-based workflows is a pretty neat thing from the UX perspective.
 
 GitHub Actions is a native CI if you're using GitHub (which you probably do). It's convenient to use because you don't have to configure a CI server for your project or open an account with another cloud CI.
 
-Usually, you create a pull request event and your CI kicks in. Yet, it can be handy if you have some long-running tasks that you don't need to run every time. For example, you may have end-to-end tests which you don't want to run for every change.
+Usually, you create a pull request event and your CI kicks in. Yet, it can be handy if you have some long-running tasks that you don't need to run every time. For example, you may have end-to-end tests which you don't want to run for every change. Frankly, this task required me to do some research on GitHub Actions and GitHub's GraphQL API. I also hit some road bumps along the way. Unfortunately, I haven't found any step-by-step guide for building such workflows even though this use case seems common. Thus, I decided to create one! I hope you will enjoy it!
 
 There are a couple of caveats with comment-based pipelines, which I want to discuss here. I will try to create an [Atlantis](https://www.runatlantis.io/)-like workflow for an arbitrary PR using GitHub Actions. These caveats are in _italics_, so you can just look for them in the text if you don't want to read everything.
 
@@ -201,6 +201,8 @@ This way, we ensure that:
 
 So, the resulting pipeline looks somewhat like below.
 
+<details><summary>Click here to expand</summary>
+
 ```yaml
 name: My Comment-based Pipeline
 on:
@@ -285,7 +287,12 @@ jobs:
           NODE_ID: ${{ github.event.comment.node_id }}
 ```
 
-That's all, folks! Hope this content was useful to you. Frankly, this task required me to do some research on GitHub Actions and GitHub's GraphQL API. I also hit some road bumps along the way. Unfortunately, I haven't found any step-by-step guide for building such workflows even though this use case seems common. Thus, I decided to create one! I hope you enjoyed it!
+</details>
+
+---
+That's all, folks! Hope this content was useful to you. If you would like to get more content like this, feel free to subscribe to my [Substack](https://newsletter.catops.dev/) or the [Telegram channel](https://t.me/catops).
+
+Cheers!
 
 ## Useful Links
 
