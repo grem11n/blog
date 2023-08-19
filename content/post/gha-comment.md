@@ -301,7 +301,7 @@ Cheers!
 - [GitHub GraphQL API Docs](https://docs.github.com/en/graphql)
 - [Forming calls with GraphQL](https://docs.github.com/en/graphql/guides/forming-calls-with-graphql)
 - [GitHub Actions: Using conditions to control job execution](https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution)
-- [Trigger a github workflow if it matches a particular comment in the Pull Request](https://github.com/orgs/community/discussions/25389)
+- [Trigger a Github workflow if it matches a particular comment in the Pull Request](https://github.com/orgs/community/discussions/25389)
 - [Issue_comment trigger event](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#issue_comment)
 - [Using the GitHub CLI on a runner](https://docs.github.com/en/actions/examples/using-the-github-cli-on-a-runner)
 - [GitHub actions get URL of test build](https://stackoverflow.com/questions/59073850/github-actions-get-url-of-test-build)
