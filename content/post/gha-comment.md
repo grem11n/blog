@@ -15,7 +15,7 @@ Building comment-based workflows is a pretty neat thing from the UX perspective.
 
 GitHub Actions is a native CI if you're using GitHub (which you probably do). It's convenient to use because you don't have to configure a CI server for your project or open an account with another cloud CI.
 
-Usually, you create a pull request event and your CI kicks in. Yet, it can be handy if you have some long-running tasks that you don't need to run every time. For example, you may have end-to-end tests which you don't want to run for every change. Frankly, this task required me to do some research on GitHub Actions and GitHub's GraphQL API. I also hit some road bumps along the way. Unfortunately, I haven't found any step-by-step guide for building such workflows even though this use case seems common. Thus, I decided to create one! I hope you will enjoy it!
+Usually, you create a pull request event and your CI kicks in. Yet, it can be handy if you have some long-running tasks that you don't need to run every time. For example, you may have end-to-end tests which you don't want to run for every change. Frankly, this task required me to do some research on GitHub Actions and GitHub's GraphQL API. I also hit some road bumps along the way. Unfortunately, I haven't found any step-by-step guide for building such workflows, even though this use case seems common. Thus, I decided to create one! I hope you will enjoy it!
 
 There are a couple of caveats with comment-based pipelines, which I want to discuss here. I will try to create an [Atlantis](https://www.runatlantis.io/)-like workflow for an arbitrary PR using GitHub Actions. These caveats are in _italics_, so you can just look for them in the text if you don't want to read everything.
 
@@ -94,7 +94,7 @@ mutation AddReaction {	<-- request type and arbitrary name for it
 
 For whatever reason _I was unable to split this GraphQL payload into multiple lines in my GHA workflow_, but if you have more luck, please, let me know.
 
-Also, notice that you have to provide `GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` in order to GitHub CLI to work and `NODE_ID: ${{ github.event.comment.node_id }}` which is the GraphQL Node ID for the comment we want emoji on.
+Also, notice that you have to provide `GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` in order for GitHub CLI to work and `NODE_ID: ${{ github.event.comment.node_id }}` which is the GraphQL Node ID for the comment we want emoji on.
 
 Another caveat is that by default GHA builds the workflow for any pull request. However, you may want to limit the execution to the open PRs only. GitHub API comes to the rescue here!
 
@@ -131,7 +131,7 @@ This step could be the first one in the workflow. Yet, I still want to use emoji
 
 Finally, we came to the part where you do meaningful work. Here you clone your code and run whatever long task you need. I won't focus on this part because this custom part has nothing to do with the comment-based workflow.
 
-Yet, once all the work is done you may want to notify your user. Remember, GitHub won't display this workflow in the `status` section!
+Yet, once all the work is done, you may want to notify your user. Remember, GitHub won't display this workflow in the `status` section!
 
 ```yaml
 ...
