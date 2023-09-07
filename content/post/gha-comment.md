@@ -135,7 +135,7 @@ Finally, we came to the part where you do meaningful work. Here you clone your c
 
 **UPD 2023-09-07**
 
-However, there is another caveat that I discovered after I published this blog post. GitHub has a special `GITHUB_SHA` environment variable. The commonly used [Checkout Action](https://github.com/actions/checkout) uses this variable to determine what reference to checkout into the working directory. Now, here's the caveat: _[the value of this variable dependes on the triggering event](https://github.com/orgs/community/discussions/26325). So, for the `issue_comment` event it equals the last commit on the default branch._ You can find the value of `GITHUB_SHA` environment variable for each type of a triggering event in [this document](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows).
+However, there is another caveat that I discovered after I published this blog post. GitHub has a special `GITHUB_SHA` environment variable. The commonly used [Checkout Action](https://github.com/actions/checkout) uses this variable to determine what reference to checkout into the working directory. Now, here's the caveat: _[the value of this variable depends on the triggering event](https://github.com/orgs/community/discussions/26325). So, for the `issue_comment` event it equals the last commit on the default branch._ You can find the value of `GITHUB_SHA` environment variable for each type of triggering event in [this document](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows).
 
 Thus, if you want to checkout the code of your pull request in such a pipeline, you need to get the reference of the latest PR commit on your own. There are a couple of ways to do so.
 
@@ -145,7 +145,7 @@ Using newer version of the GitHub CLI (works with `2.32.1`). This will give you 
 gh pr view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json headRefOid | jq -r '.headRefOid'
 ```
 
-or with older versions of the GitHub CLI. This will give you the branch name:
+Or with older versions of the GitHub CLI. This will give you the branch name:
 
 ```
 gh pr view $PR_NUMBER --repo ${{ github.repository }} --json headRefName | jq -r '.headRefName'
@@ -168,7 +168,7 @@ So, before you checkout your code, you can add a step that determines the refere
           ref: ${{ steps.getRef.outputs.pr_ref }}
 ```
 
-There might be more elegant way of getting the reference of the latest commit in a pull request, but I haven't found it. Please, let me know if you know one!
+There might be a more elegant way of getting the reference of the latest commit in a pull request, but I haven't found it. Please, let me know if you know one!
 
 **End of UPD 2023-09-07**
 
