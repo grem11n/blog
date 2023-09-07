@@ -11,6 +11,8 @@ tags: ["cicd", "github", "actions", "graphql"]
 
 # How to Trigger a GitHub Actions Pipeline with a Comment
 
+**UPD 2023-09-07**: _Clarified some caveats around checking out the code when triggering a pipeline with a comment. Look for the **UPD 2023-09-07** text on this page._
+
 Building comment-based workflows is a pretty neat thing from the UX perspective. You can work on the code in your IDE, create a pull request, and then leverage PR comments to run some automation.
 
 GitHub Actions is a native CI if you're using GitHub (which you probably do). It's convenient to use because you don't have to configure a CI server for your project or open an account with another cloud CI.
@@ -131,7 +133,46 @@ This step could be the first one in the workflow. Yet, I still want to use emoji
 
 Finally, we came to the part where you do meaningful work. Here you clone your code and run whatever long task you need. I won't focus on this part because this custom part has nothing to do with the comment-based workflow.
 
-Yet, once all the work is done, you may want to notify your user. Remember, GitHub won't display this workflow in the `status` section!
+**UPD 2023-09-07**
+
+However, there is another caveat that I discovered after I published this blog post. GitHub has a special `GITHUB_SHA` environment variable. The commonly used [Checkout Action](https://github.com/actions/checkout) uses this variable to determine what reference to checkout into the working directory. Now, here's the caveat: _[the value of this variable dependes on the triggering event](https://github.com/orgs/community/discussions/26325). So, for the `issue_comment` event it equals the last commit on the default branch._ You can find the value of `GITHUB_SHA` environment variable for each type of a triggering event in [this document](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows).
+
+Thus, if you want to checkout the code of your pull request in such a pipeline, you need to get the reference of the latest PR commit on your own. There are a couple of ways to do so.
+
+Using newer version of the GitHub CLI (works with `2.32.1`). This will give you the `sha` checksum of the latest PR commit:
+
+```
+gh pr view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json headRefOid | jq -r '.headRefOid'
+```
+
+or with older versions of the GitHub CLI. This will give you the branch name:
+
+```
+gh pr view $PR_NUMBER --repo ${{ github.repository }} --json headRefName | jq -r '.headRefName'
+```
+
+So, before you checkout your code, you can add a step that determines the reference you need:
+
+```
+      - name: Get PR HEAD Ref
+        id: getRef
+        run: echo "pr_ref=$(gh pr view $PR_NUMBER --repo ${{ github.repository }} --json headRefName | jq -r '.headRefName')" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+
+      - name: Checkout source code from Github
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ steps.getRef.outputs.pr_ref }}
+```
+
+There might be more elegant way of getting the reference of the latest commit in a pull request, but I haven't found it. Please, let me know if you know one!
+
+**End of UPD 2023-09-07**
+
+Once the work is done, you may want to notify your user. Remember, GitHub won't display this workflow in the `status` section!
 
 ```yaml
 ...
@@ -239,11 +280,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.issue.number }}
           NODE_ID: ${{ github.event.comment.node_id }}
- 
+
+      - name: Get PR HEAD Ref
+        id: getRef
+        run: echo "pr_ref=$(gh pr view $PR_NUMBER --repo ${{ github.repository }} --json headRefOid | jq -r '.headRefOid')" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+
       - name: Checkout source code from Github
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ steps.getRef.outputs.pr_ref }}
  
       - name: Run a long task
         run: |
@@ -305,3 +354,6 @@ Cheers!
 - [Issue_comment trigger event](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#issue_comment)
 - [Using the GitHub CLI on a runner](https://docs.github.com/en/actions/examples/using-the-github-cli-on-a-runner)
 - [GitHub actions get URL of test build](https://stackoverflow.com/questions/59073850/github-actions-get-url-of-test-build)
+- [GITHUB_SHA not the same as the triggering commit](https://github.com/orgs/community/discussions/26325)
+- [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+- [Checkout Action](https://github.com/actions/checkout)
