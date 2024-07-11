@@ -129,7 +129,7 @@ This article is already too long to showcase Helm Unittest in action. So, I woul
 
 ## The test pyramid
 
-**test pyramic pic**
+{{< figure src="/img/posts/helm-testing/test-pyramid.png" >}}
 
 As you could already tell, some of those tools are redundant. For example, Helm Unittest runs `helm template` under the hood. So, there's no need in executing that command separately. In the same way, you can write tests to ensure the security practices without Kyverno.
 
