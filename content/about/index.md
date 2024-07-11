@@ -7,11 +7,12 @@ image: https://avatars1.githubusercontent.com/u/15696488?v=4
 
 {{< figure src="https://devopsdays.org/events/2019-kiev/organizers/yurii-rochniak.jpg" class="about" >}}
 
-Sup! My name is Yura. I'm SRE taking care of the Kubernetes-related infrastructure at [N26](https://n26.com)
+Sup! My name is Yura. I am SRE at [Preply](https://preply.com/).
 
-Previously: [Preply](https://preply.com/), [Adobe Advertising Cloud](https://advertising.adobe.com/)
 
-Originally from Kyiv. Currently, located in Berlin.
+Previously, I was leading a team taking care of the Kubernetes-related infrastructure at [N26](https://n26.com) and even before that worked for [Adobe Advertising Cloud](https://advertising.adobe.com/).
+
+Originally from Kyiv. For more than 5 years live in Berlin.
 
 * Creator and admin of the [@CatOps](https://t.me/catops) Telegram channel
 * [CatOps Newsletter](https://catops.substack.com/) on Substack
