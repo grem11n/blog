@@ -9,6 +9,8 @@ categories: ["Tech"]
 tags: ["kubernetes", "helm", "testing", "en"]
 ---
 
+_This article is also available [on Substack](https://newsletter.catops.dev/p/testing-helm-charts-part-i)._
+
 Before answering this question, we should decide _why to test Helm chart?_ and if you even need to bother with that. Following an example from this _xkcd_ comic, the real answer is: _it depends_.
 
 ![xkcd automation](https://imgs.xkcd.com/comics/automation.png)
