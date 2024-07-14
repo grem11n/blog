@@ -9,6 +9,8 @@ categories: ["Tech"]
 tags: ["kubernetes", "helm", "testing", "en"]
 ---
 
+_This article is also available [on Substack](https://newsletter.catops.dev/p/testing-helm-charts-part-ii).
+
 This is a very basic example of using Helm Unittestas well as an example of the "test pyramid" discussed in the [previous article](https://grem1.in/post/helm-testing-pt1/). The code is [available on GitHub](https://github.com/grem11n/talk-props/tree/main/fw-days-devops-2024).
 
 ## Structure
