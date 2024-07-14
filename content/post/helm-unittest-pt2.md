@@ -19,34 +19,22 @@ We have two charts:
 
 - `fw-demo` - a chart with our demo application
 
-- `monitiring` - a library chart that applies some DataDog monitoring rules for the main chart.
+- `monitoring` - a library chart that applies some DataDog monitoring rules for the main chart.
 
 `monitoring` chart is a dependency. The main `Chart.yaml` looks like:
 
 ```yaml
-
 ---
-
 apiVersion: v2
-
 name: fw-demo
-
 description: A demo chart for FW Days DevOps 2024
-
 type: application
-
 version: 0.0.1
-
 appVersion: "0.0.0"
-
 dependencies:
-
   - name: monitoring
-
     version: 0.0.1
-
     repository: "file://../monitoring/"
-
 ```
 
 ## Basic tests
@@ -54,41 +42,26 @@ dependencies:
 For basic tests, we want to ensure that the main chart is "templatable" and that `helm lint` passes. The main chart requires some values. For the tests, we can define them in the `fw-demo/tests/minimal.values.yaml`. This file contains the minimal set of required values. We can check if `helm template` passes as well as it hints our users of the minimal required configuration:
 
 ```yaml
-
 ---
-
 owner: test
-
 clusterName: test-cluster
-
 ```
 
 Now, we can run the `template` and `lint` commands. We don't care about the actual output at this stage, so it can be omitted.
 
 ```bash
-
 helm template fw-demo --values fw-demo/tests/minimal.values.yaml 1>/dev/null
-
 echo $?
-
 0
-
 ```
 
 ```bash
-
 helm lint fw-demo --values fw-demo/tests/minimal.values.yaml
-
 ==> Linting fw-demo
-
 [INFO] Chart.yaml: icon is recommended
-
 1 chart(s) linted, 0 chart(s) failed
-
 echo $?
-
 0
-
 ```
 
 ## Conformance tests
@@ -96,19 +69,13 @@ echo $?
 To run the conformance tests, we are going to use [Kubeconform](https://github.com/yannh/kubeconform). However, it only works with rendered manifests. So, let's pipe the `helm template` output into it:
 
 ```bash
-
 helm template fw-demo --values fw-demo/tests/minimal.values.yaml | \
-
 kubeconform --summary -ignore-missing-schemas -kubernetes-version 1.30.1
-
 Summary: 5 resources found parsing stdin - Valid: 4, Invalid: 0, Errors: 0, Skipped: 1
-
 ```
 
 - `--summary` outputs some brief information about the validated objects
-
 - `-ignore-missing-schemas` instructs Kubeconform to ignore custom resources. We don't have custom schemas for them in this test, although it's possible to add them
-
 - `-kubernetes-version` allows you to set the cluster version for API versions check
 
 ## Policy checks
@@ -120,65 +87,41 @@ We will use [Kyverno](https://kyverno.io/)for this example, but [OPA/Gatekeeper]
 For the illustration purposes, I took a policy from [the public library](https://kyverno.io/policies/best-practices/require-labels/require-labels/). This policy ensures that a label `app.kubernetes.io/owner` is set. Since we do have this label set in `_helpers.tpl`, we should be able to run the test successfully. Notice, that you need to template the chart first, because Kyverno only works with rendered manifests.
 
 ```helm
-
 {{/*
-
 Common labels
-
 */}}
-
 {{- define "fw-demo.labels" -}}
-
 helm.sh/chart: {{ include "fw-demo.chart" . }}
-
 {{/* We want to hint the ownership here! */}}
-
 app.kubernetes.io/owner: {{ required "Owner .Values.owner is required." .Values.owner }}
-
 {{ include "fw-demo.selectorLabels" . }}
-
 {{- if .Chart.AppVersion }}
-
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-
 {{- end }}
-
 app.kubernetes.io/managed-by: {{ .Release.Service }}
-
 {{- end }}
-
 ```
 
 ```bash
-
 helm template fw-demo --values fw-demo/tests/minimal.values.yaml --namespace fw-demo --kube-version 1.30.0 | \
-
 kyverno apply policies -r -
 
 Applying 3 policy rule(s) to 5 resource(s)...
-
 pass: 2, fail: 0, warn: 0, error: 0, skip: 0
-
 ```
 
 Let's see what happens if we remove this label from our manifests.
 
 ```bash
-
 sed -i '/app.kubernetes.io\/owner/d' fw-demo/templates/_helpers.tpl
-
 helm template fw-demo --values fw-demo/tests/minimal.values.yaml --namespace fw-demo --kube-version 1.30.0 | \
 
 ./kyverno apply policies --v 3 -r -
 
 Applying 3 policy rule(s) to 5 resource(s)...
-
 2024-07-11T21:00:23+02:00       LEVEL(-3)       engine.validate validation/validate_resource.go:329       validation error        {"policy.name": "require-labels", "policy.namespace": "", "policy.apply": "All", "new.kind": "Deployment", "new.namespace": "default", "new.name": "release-name-fw-demo", "rule.name": "autogen-check-for-labels", "path": "/spec/template/metadata/labels/app.kubernetes.io/owner/", "error": "resource value '<nil>' does not match '?*' at path /spec/template/metadata/labels/app.kubernetes.io/owner/"}
-
 2024-07-11T21:00:23+02:00       LEVEL(-3)       engine.validate validation/validate_resource.go:329       validation error        {"policy.name": "require-labels", "policy.namespace": "", "policy.apply": "All", "new.kind": "Pod", "new.namespace": "default", "new.name": "release-name-fw-demo-test-connection", "rule.name": "check-for-labels", "path": "/metadata/labels/app.kubernetes.io/owner/", "error": "resource value '<nil>' does not match '?*' at path /metadata/labels/app.kubernetes.io/owner/"}
-
 pass: 0, fail: 2, warn: 0, error: 0, skip: 0
-
 ```
 
 I use more verbose output with `--v 3` to show you the actual validation error.
@@ -210,25 +153,15 @@ The configuration is pretty straightforward, but Unittest supports more complex 
 Here's an example of a successful test run:
 
 ```bash
-
 untt fw-demo
-
 ### Chart [ fw-demo ] fw-demo
-
  PASS  fw-demo  fw-demo/tests/deployment_test.yaml
-
  PASS  fw-demo  fw-demo/tests/monitoring_test.yaml
-
 Charts:      1 passed, 1 total
-
 Test Suites: 2 passed, 2 total
-
 Tests:       6 passed, 6 total
-
 Snapshot:    0 passed, 0 total
-
 Time:        13.164702ms
-
 ```
 
 ## Bringing it all together
