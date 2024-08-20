@@ -17,7 +17,7 @@ Before answering this question, we should decide _why to test Helm chart?_ and i
 
 So, I want to share with you my story of Helm chart testing. How and, more importantly, why it started, and how it played out in the end.
 
-On a side note, I did a talk on this topic at the DevOps FW Days conference. This talk is Ukrainian, so if you know the language, you can watch [it on YouTube]([https://youtu.be/BtciJTqJvQ8?si=gKkGh_EGBCbc-48V](https://youtu.be/BtciJTqJvQ8?si=gKkGh_EGBCbc-48V)). The slides are in English, though, and [are available here]([https://docs.google.com/presentation/d/13HNGHYJt1rcxL7ZTHvshplzy8H9WPlm3700qvcFKOF8/edit?usp=sharing](https://docs.google.com/presentation/d/13HNGHYJt1rcxL7ZTHvshplzy8H9WPlm3700qvcFKOF8/edit?usp=sharing)).
+On a side note, I did a talk on this topic at the DevOps FW Days conference. This talk is Ukrainian, so if you know the language, you can watch [it on YouTube](https://youtu.be/BtciJTqJvQ8?si=gKkGh_EGBCbc-48V). The slides are in English, though, and [are available here](https://docs.google.com/presentation/d/13HNGHYJt1rcxL7ZTHvshplzy8H9WPlm3700qvcFKOF8/edit?usp=sharing).
 
 ## The beginning of the journey (why)
 
@@ -49,7 +49,7 @@ Helm has an embedded `test` command, but what it actually does is it creates dum
 
 - What are we even testing when we spin up a random Nginx container and getting the default welcome page out of it?
 
-The first problem may seem like a minor obstacle, especially given how easy it is to spin up a Kubernetes cluster these days with tools like [Kind]([https://kind.sigs.k8s.io/](https://kind.sigs.k8s.io/)), [k3s]([https://k3s.io/](https://k3s.io/)), or [Minikube]([https://minikube.sigs.k8s.io/docs/](https://minikube.sigs.k8s.io/docs/)). However, the majority of clusters do not exist in isolation. You likely have a bunch of controllers and integrations in place. These would be quite hard to replicate in an isolated test environment. Moreover, setting up a fresh environment for test takes time and computing resources. These resources may be better used elsewhere.
+The first problem may seem like a minor obstacle, especially given how easy it is to spin up a Kubernetes cluster these days with tools like [Kind](https://kind.sigs.k8s.io/), [k3s](https://k3s.io/), or [Minikube](https://minikube.sigs.k8s.io/docs/). However, the majority of clusters do not exist in isolation. You likely have a bunch of controllers and integrations in place. These would be quite hard to replicate in an isolated test environment. Moreover, setting up a fresh environment for test takes time and computing resources. These resources may be better used elsewhere.
 
 The second thing is that we don't deploy a real app in a test scenario. So, it gives us way too few insights into our code itself for the price of having a test cluster(s).
 
@@ -61,7 +61,7 @@ Jeff Smith @ DevOps Days Chicago_
 
 At the end of the day, Helm is a templating tool. So, we could template our chart with various values and check that the resulting manifests looks correct. First, we tried to leverage Terratest for this purpose. First, we tried Terratest for this purpose.
 
-Some blog posts that are easy to find, likde [this one]([https://blog.gruntwork.io/automated-testing-for-kubernetes-and-helm-charts-using-terratest-a4ddc4e67344](https://blog.gruntwork.io/automated-testing-for-kubernetes-and-helm-charts-using-terratest-a4ddc4e67344)) or [this one]([https://medium.com/@zelldon91/advanced-test-practices-for-helm-charts-587caeeb4cb](https://medium.com/@zelldon91/advanced-test-practices-for-helm-charts-587caeeb4cb)) as well as [code examples]([https://github.com/gruntwork-io/terratest-helm-testing-example](https://github.com/gruntwork-io/terratest-helm-testing-example)) focus on the integration testing. Still, we can use Terratest to render a template and compare it with a "golden" manifest that we have at hand.
+Some blog posts that are easy to find, likde [this one](https://blog.gruntwork.io/automated-testing-for-kubernetes-and-helm-charts-using-terratest-a4ddc4e67344) or [this one](https://medium.com/@zelldon91/advanced-test-practices-for-helm-charts-587caeeb4cb) as well as [code examples](https://github.com/gruntwork-io/terratest-helm-testing-example) focus on the integration testing. Still, we can use Terratest to render a template and compare it with a "golden" manifest that we have at hand.
 
 The good thing about Terratest is that it is available as a Go package. Thus, one can leverage the whole power of a general-purpose programming language. It is also very flexible thanks to the real language under the hood.
 
@@ -103,7 +103,7 @@ We came up with several functional and non-functional requirements for the tests
 
 ### A chart can be rendered
 
-This is a simple one: you can use the `helm template` command as well as the [Helm JSON Schema]([https://www.arthurkoziel.com/validate-helm-chart-values-with-json-schemas/](https://www.arthurkoziel.com/validate-helm-chart-values-with-json-schemas/)) to guarantee this. The only caveat here is that you need to provide some values to the chart. We overcame this by creating some default test values for each chart that covered the basic usage of a chart.
+This is a simple one: you can use the `helm template` command as well as the [Helm JSON Schema](https://www.arthurkoziel.com/validate-helm-chart-values-with-json-schemas/) to guarantee this. The only caveat here is that you need to provide some values to the chart. We overcame this by creating some default test values for each chart that covered the basic usage of a chart.
 
 ### Charts are following good practices
 
@@ -111,7 +111,7 @@ Helm has a `helm lint` command that evaluates if you templates themselves are co
 
 ### The manifests are correct
 
-This is sorta first line of defense when it comes to YAML manifests. We used [Kubeconform]([https://github.com/yannh/kubeconform](https://github.com/yannh/kubeconform)) to check if the schema and API versions are correct an up-to-date with the Kubernetes version we've been using.
+This is sorta first line of defense when it comes to YAML manifests. We used [Kubeconform](https://github.com/yannh/kubeconform) to check if the schema and API versions are correct an up-to-date with the Kubernetes version we've been using.
 
 The good thing about Kubeconform is that it supports custom schemes. You can also validate custom resources. It requires a little bit of work to keep those schemes up-to-date, since the tool won't track CRD changes for you.
 
@@ -119,15 +119,15 @@ The good thing about Kubeconform is that it supports custom schemes. You can als
 
 It is possible to use a generic tool to check security as well. We kept it separate, because we had a dedicated security team. By separating security checks, we separate the tests' ownership within the Platform department.
 
-These policies were then validated with [Kyverno]([https://kyverno.io/](https://kyverno.io/)).
+These policies were then validated with [Kyverno](https://kyverno.io/).
 
 ### Testing the logic
 
-At last, we got to the most exciting part! In theory, we could still use Terratest. But we would need to maintain the complex test logic ourselves. Luckily, there's a project called [Helm Unittest]([https://github.com/helm-unittest/helm-unittest](https://github.com/helm-unittest/helm-unittest)), which is perfect for our scenario.
+At last, we got to the most exciting part! In theory, we could still use Terratest. But we would need to maintain the complex test logic ourselves. Luckily, there's a project called [Helm Unittest](https://github.com/helm-unittest/helm-unittest), which is perfect for our scenario.
 
 With Helm Unittest it is possible to validate specific chunks of rendered manifest. So, unimportant parts won't stand in your way. Also, test definitions are much smaller compared to golden files. Hence, they are easier for a human to read and comprehend.
 
-This article is already too long to showcase Helm Unittest in action. So, I would extract it into a separate blog post. Still, [the code]([https://github.com/grem11n/talk-props/tree/main/fw-days-devops-2024](https://github.com/grem11n/talk-props/tree/main/fw-days-devops-2024)) I used for the conference demo is available. You can take a look at it and give Helm Unittest a try already.
+This article is already too long to showcase Helm Unittest in action. So, I would extract it into a separate blog post. Still, [the code](https://github.com/grem11n/talk-props/tree/main/fw-days-devops-2024) I used for the conference demo is available. You can take a look at it and give Helm Unittest a try already.
 
 ## The test pyramid
 
