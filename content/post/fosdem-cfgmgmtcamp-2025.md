@@ -1,6 +1,6 @@
 ---
 title: "My Notes from FOSDEM & CfgMgmt Camp 2025"
-date: 2025-02-14
+date: 2025-02-13
 draft: false
 slug: "fosdem-cfgmgmt-camp-2025"
 cover:
