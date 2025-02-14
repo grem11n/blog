@@ -83,7 +83,7 @@ Here are also some talks that I wanted to attend, but didn't for various reasons
 
 ## CfgMgmt Camp
 
-Videos from the main track are available in [this playlist on YouTube](https://youtu.be/Qql42n4NRGs?si=28jwY0SRLZ4DqrZO). There were cameras on other tracks as well, but I'm not sure if those recordings are available.
+Videos from the main track are available in [this playlist on YouTube](https://www.youtube.com/playlist?list=PLBZBIkixHEiddF07cN9J4Egu9VmBUEwYu). There were cameras on other tracks as well, but I'm not sure if those recordings are available.
 
  I would especially like to share the slides from a talk that I liked the most: The Worst Issue You Ever Dealt With by Laura Nolan. In this talk, she explores a scientific approach to troubleshooting aka something you spend a lot of time on if you're in an SRE or operational position. It's also curious, that the science existed long before the rise of IT: a lot of research on troubleshooting was done on doctors to help them diagnose their patients better as well as on firefighters to understand how people behave under stress.
 - Slides are available [here](https://requisitevariety.net/worstissue.pdf)
