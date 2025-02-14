@@ -11,6 +11,8 @@ tags: ["event", "conference", "fosdem", "cfgmgmt"]
 
 {{< figure src="/img/posts/fosdem2023/fosdem-blog-logo.png" >}}
 
+_You can also read this article [on Substack](https://newsletter.catops.dev/p/my-notes-from-fosdem-and-cfgmgmt)._
+
 For many years now I spent the beginning of February in Belgium, first at [FOSDEM](https://fosdem.org/) in Brussels and later at [CfgMgmt Camp](https://cfgmgmtcamp.org/) in Ghent. Two years ago I shared [some notes](https://grem1.in/post/fosdem-cfgmgmt-camp-2023/) from the conferences, and I want to do so again.
 
 But first, let me tell you why I love each of these conferences. Frankly, I've heard many concerns about the two: rooms being too crowded, logistics too chaotic, and many topics too outdated. Yet, partially this is why I love them. Both FOSDEM and CfgMgmt Camp are community-driven conferences that truly feel like events organized for enthusiasts by enthusiasts. Just to put it into perspective: both rooms on Nix and retro computing were full.
