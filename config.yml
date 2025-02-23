@@ -83,8 +83,6 @@ params:
             - You can find more information about me on [the About](about/) page as well as my occasional [public talks here](talks/) (none of them is in English, though)
 
     socialIcons:
-        - name: instagram
-          url: "https://www.instagram.com/yuriirochniak/"
         - name: telegram
           url: "https://t.me/catops"
         - name: substack
@@ -93,6 +91,10 @@ params:
           url: "https://github.com/grem11n"
         - name: linkedin
           url: "https://www.linkedin.com/in/yrochnyak/"
+        - name: bluesky
+          url: "https://bsky.app/profile/grem1.in"
+        - name: instagram
+          url: "https://www.instagram.com/yuriirochniak/"
         - name: stackoverflow
           url: "https://stackoverflow.com/users/6099033/yurii-rochniak?tab=profile"
         - name: goodreads
