@@ -1,6 +1,7 @@
 baseURL: "https://grem1.in"
 title: YR's Blog
-paginate: 5
+pagination:
+  pagerSize: 5
 theme: papermod
 
 enableInlineShortcodes: true
@@ -9,7 +10,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 enableEmoji: true
-googleAnalytics: "UA-142478515-1"
+#googleAnalytics: "UA-142478515-1"
 
 minify:
     disableXML: true
