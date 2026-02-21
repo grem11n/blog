@@ -1,10 +1,10 @@
 ---
 title: "Yurii Rochniak"
-date: 2022-09-03
+date: 2026-02-18
 draft: false
 ---
 
-{{< figure src="https://devopsdays.org/events/2019-kiev/organizers/yurii-rochniak.jpg" align="right" >}}
+{{< figure src="https://devopsdays.org/events/2025-kyiv/organizers/yurii-rochniak_hu_1c0f1184efa9fc0.webp" align="right" >}}
 
 _[Download the PDF](https://github.com/grem11n/blog/raw/master/static/files/Yurii_Rochniak_CV.pdf)_
 
@@ -16,15 +16,25 @@ _[Download the PDF](https://github.com/grem11n/blog/raw/master/static/files/Yuri
 * Or use social buttons in header or footer of this website
 ---
 
+## Bio
+
+An engineer, who's doing a little bit of everything, when it comes to building platforms
+with epmhasis on reliability and scalability. My strengths lay in AWS, Kubernetes, and building CI/CD flows.
+
+When it comes to code, I prefer Go, but I can live with Python, if necessary - at the end of the day,
+it's almost always comes down to Bash.
+
 ## Career Path:
 
-#### July 2019 - present: [N26](https://n26.com) (Online bank) - Lead SRE
+#### March 2024 - present: [Preply](https://preply.com) (A global language learning platform) - Senior Cloud Platform Engineer
+
+#### July 2019 - March 2024: [N26](https://n26.com) (Online bank) - Lead SRE
 
 - Improved the predictability of the team's deliverables by managing team priorities according to the **OKR framework**
 - Helped to scale the platform team to more than 20 engineers by participating in the interview process
 - Improved the visibility of some **Kubernetes** components' reliability by introducing **SLOs**
-- Decreased the time to create a full-functional **Kubernetes** cluster to ~30 minutes and a single command by creating a CLI cluster-management tool in **Go**
-- Reduced operational burden for product engineers by abstracting 2 **Terraform** IaC with **Kubernetes operators**
+- Decreased the lead time to create a full-functional **Kubernetes** cluster to ~30 minutes and a single command by creating a CLI cluster-management tool in **Go**
+- Reduced operational burden for product engineers by abstracting lower-level configuration with **Kubernetes operators**
 - Reduced the footprint of internal tests for **Helm** charts to a couple lines of code per test by creating an internal library to test charts with **Go** and **Terratest**
 - Introduced highly available setup for a legacy deploy sub-system as well as decreased MTTR for this sub-system to ~5 minutes using **AWS EFS**
 - Ensured compliance of the infrastructure by upgrading OS version as well as **Saltstack** version in use. This change also required an upgrade of some internal scripts from **Python 2** to **Python 3**
@@ -50,6 +60,12 @@ _[Download the PDF](https://github.com/grem11n/blog/raw/master/static/files/Yuri
 
 #### January 2014 - October 2014: [LuckyNet](https://www.lucky.net/en.html) (Internet service provider) - Support Engineer
 ---
+
+## Personal Projects:
+
+- [AWS VPC Peering Terraform Module](https://github.com/grem11n/terraform-aws-vpc-peering) that people actually use in production.
+- [AWS Cost Exporter](https://github.com/grem11n/cost-exporter) - a tool to export AWS Cost Explorer data in Prometheus format. Potentially extesible to other formats and cloud providers.
+- [S3bc](https://github.com/grem11n/s3bc) - just an experiment of writing a CLI tool in Go with Cobra and Viper.
 
 ## Education:
 
