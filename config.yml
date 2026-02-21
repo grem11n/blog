@@ -36,7 +36,7 @@ languages:
                   weight: 10
                 - name: CV
                   url: cv/
-                  weight: 10
+                  weight: 15
                 - name: Search
                   url: search/
                   weight: 20
