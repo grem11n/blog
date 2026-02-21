@@ -16,8 +16,6 @@ _[Download the PDF](https://grem1.in/files/Yurii_Rochniak_CV.pdf)_
 * Or use social buttons in header or footer of this website
 ---
 
-=======
-
 ## Bio
 
 An engineer, who's doing a little bit of everything, when it comes to building platforms
