@@ -4,7 +4,7 @@ date: 2022-09-03
 draft: false
 ---
 
-{{< figure src="https://devopsdays.org/events/2019-kiev/organizers/yurii-rochniak.jpg" align="right" >}}
+{{< figure src="https://devopsdays.org/events/2025-kyiv/organizers/yurii-rochniak_hu_1c0f1184efa9fc0.webp" align="right" >}}
 
 _[Download the PDF](https://grem1.in/files/Yurii_Rochniak_CV.pdf)_
 
