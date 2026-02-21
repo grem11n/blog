@@ -5,7 +5,7 @@ draft: false
 image: https://avatars1.githubusercontent.com/u/15696488?v=4
 ---
 
-{{< figure src="https://devopsdays.org/events/2019-kiev/organizers/yurii-rochniak.jpg" class="about" >}}
+{{< figure src="https://devopsdays.org/events/2025-kyiv/organizers/yurii-rochniak_hu_1c0f1184efa9fc0.webp" class="about" >}}
 
 Sup! My name is Yura. I am SRE at [Preply](https://preply.com/).
 
