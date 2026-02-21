@@ -6,7 +6,7 @@ draft: false
 
 {{< figure src="https://devopsdays.org/events/2019-kiev/organizers/yurii-rochniak.jpg" align="right" >}}
 
-_[Download the PDF](https://github.com/grem11n/blog/raw/master/static/files/Yurii_Rochniak_CV.pdf)_
+_[Download the PDF](https://grem1.in/files/Yurii_Rochniak_CV.pdf)_
 
 ## Contacts
 
@@ -16,10 +16,34 @@ _[Download the PDF](https://github.com/grem11n/blog/raw/master/static/files/Yuri
 * Or use social buttons in header or footer of this website
 ---
 
+=======
+
+## Bio
+
+An engineer, who's doing a little bit of everything, when it comes to building platforms
+with epmhasis on reliability and scalability. My strengths lay in AWS, Kubernetes, and building CI/CD flows.
+
+When it comes to code, I prefer Go, but I can live with Python, if necessary - at the end of the day,
+it's almost always comes down to Bash.
+
+## Technologies
+
+Tools and languages I interact with on a regular basis, in no particular order:
+
+Go, Python, Bash, TypeScript, AWS, Kubernetes, Jenkins, Groovy, GitHub / GitHub Actions, PostgreSQL, Helm, Terraform, Atlantis.
+
 ## Career Path:
 
-#### July 2019 - present: [N26](https://n26.com) (Online bank) - Lead SRE
+#### March 2024 - present: [Preply](https://preply.com) (A global language learning platform) - Senior Cloud Platform Engineer
+- Revamped the RFC process for decision making in the company by updating the template and leading the "RFC of the Month" initiative internally.
+- Led the final stages of the migration of the **GraphQL** API gateway based on Apollo Gateway to **Apollo Router**.
+- Enabled the ML team to create Databricks workspaces on their own with just about 5 lines of code by providing a Terraform module.
+- Improved the predictability of the configuration changes in Kubernetes by introducing Helm Unittest into the company.
+- Leading the initiative to apply customer-journey-based **SLO**s in our systems.
+- Active contributor to the engineering culture within the company as a member of the Engineering Excellency Group.
+- Active interviewer of the new talent for the company.
 
+#### July 2019 - March 2024: [N26](https://n26.com) (Online bank) - Lead SRE
 - Improved the predictability of the team's deliverables by managing team priorities according to the **OKR framework**
 - Helped to scale the platform team to more than 20 engineers by participating in the interview process
 - Improved the visibility of some **Kubernetes** components' reliability by introducing **SLOs**
@@ -86,4 +110,4 @@ National Technical University of Ukraine “Kyiv Polytechnic Institute.” [Inst
 - [Public speaking](https://grem1.in/talks/)
 ---
 
-_[Download the PDF](https://github.com/grem11n/blog/raw/master/static/files/Yurii_Rochniak_CV.pdf)_
+_[Download the PDF](https://grem1.in/files/Yurii_Rochniak_CV.pdf)_

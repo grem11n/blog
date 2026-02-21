@@ -10,6 +10,18 @@ If you are interested in having me speak at an internal or external event, you c
 
 ## Previous Talks
 
+### "Ten Pitfalls of a Platform Team" - talk at FWDays DevOps 2025 Conference (eng)
+
+{{< youtube 24UXMPS2stE >}}
+
+### "Testing of Helm Charts"  - talk at FWDays DevOps 2024 Conference (ukr)
+
+{{< youtube BtciJTqJvQ8 >}}
+
+### Guest at "GeekOps" podcast (ukr)
+
+{{< youtube Hjcf-tQxUko >}}
+
 ### Guest speaker at "Потестим в проде" (rus)
 
 Casually speaking about the common problems in devops-ish terminology, differences between IT market in Kyiv and Berlin, and if you need Kubernetes to run your personal blog
