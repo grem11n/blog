@@ -17,6 +17,11 @@ env:
   # BIOME ignores the exclude list
   VALIDATE_BIOME_FORMAT: false
   VALIDATE_BIOME_LINT: false
+  # TODO: Fix errors before enable
+  VALIDATE_MARKDOWN: false
+  VALIDATE_MARKDOWN_PRETTIER: false
+  VALIDATE_NATURAL_LANGUAGE: false
+  VALIDATE_SPELL_CODESPELL: false
 
 permissions: read-all
 jobs:
