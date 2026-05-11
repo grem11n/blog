@@ -1,3 +1,4 @@
+---
 baseURL: "https://grem1.in"
 title: YR's Blog
 pagination:
@@ -13,110 +14,111 @@ enableEmoji: true
 #googleAnalytics: "UA-142478515-1"
 
 minify:
-    disableXML: true
-    # minifyOutput: true
+  disableXML: true
+  # minifyOutput: true
 
 languages:
-    en:
-        languageName: "English"
-        weight: 1
-        menu:
-            main:
-                - name: About
-                  url: about/
-                  weight: 5
-                - name: Tags
-                  url: tags
-                  weight: 10
-                - name: Categories
-                  url: categories
-                  weight: 10
-                - name: Talks
-                  url: talks/
-                  weight: 10
-                - name: CV
-                  url: cv/
-                  weight: 15
-                - name: Search
-                  url: search/
-                  weight: 20
+  en:
+    languageName: "English"
+    weight: 1
+    menu:
+      main:
+        - name: About
+          url: about/
+          weight: 5
+        - name: Tags
+          url: tags
+          weight: 10
+        - name: Categories
+          url: categories
+          weight: 10
+        - name: Talks
+          url: talks/
+          weight: 10
+        - name: CV
+          url: cv/
+          weight: 15
+        - name: Search
+          url: search/
+          weight: 20
 outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON
+  home:
+    - HTML
+    - RSS
+    - JSON
 
 params:
-    env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "YR's Blog"
-    author: Yurii Rochniak
-    # author: ["Me", "You"] # multiple authors
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "YR's Blog"
+  author: Yurii Rochniak
+  # author: ["Me", "You"] # multiple authors
 
-    defaultTheme: auto
-    # disableThemeToggle: true
-    ShowShareButtons: true
-    ShowReadingTime: true
-    # disableSpecial1stPost: true
-    displayFullLangName: true
-    ShowPostNavLinks: true
-    ShowBreadCrumbs: true
-    ShowCodeCopyButtons: true
-    ShowToc: true
-    comments: false
-    images: ["img/card_image.jpg"]
+  defaultTheme: auto
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  comments: false
+  images: ["img/card_image.jpg"]
 
-    cover:
-      hidden: false
-      hiddenInList: false
-      hiddenInSingle: true
-      responsiveImages: true
-      thumbnailInList: true
+  cover:
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: true
+    responsiveImages: true
+    thumbnailInList: true
 
-    profileMode:
-        enabled: false
+  profileMode:
+    enabled: false
 
-    homeInfoParams:
-        Title: "Sup! My name is Yura 👋"
-        Content: >
-            I'm an author of **[CatOps Telegram channel](https://t.me/catops)** and **[a Newsletter](https://catops.substack.com/)** about DevOps and other issues, but mostly DevOps.
+  homeInfoParams:
+    Title: "Sup! My name is Yura 👋"
+    Content: >
+      I'm an author of **[CatOps Telegram channel](https://t.me/catops)** and **[a Newsletter](https://catops.substack.com/)** about DevOps and other issues, but mostly DevOps.
 
-            - Working as SRE focusing on different infrastructure projects. Mostly Kubernetes related.
+      - Working as SRE focusing on different infrastructure projects. Mostly Kubernetes related.
 
-            - Originally from Kyiv. Currently, located in Berlin.
+      - Originally from Kyiv. Currently, located in Berlin.
 
-            - You can find more information about me on [the About](about/) page as well as my occasional [public talks here](talks/) (none of them is in English, though)
+      - You can find more information about me on [the About](about/) page as well as my occasional [public talks here](talks/) (none of them is in English, though)
 
-    socialIcons:
-        - name: telegram
-          url: "https://t.me/catops"
-        - name: substack
-          url: "https://catops.substack.com/"
-        - name: github
-          url: "https://github.com/grem11n"
-        - name: linkedin
-          url: "https://www.linkedin.com/in/yrochnyak/"
-        - name: bluesky
-          url: "https://bsky.app/profile/grem1.in"
-        - name: instagram
-          url: "https://www.instagram.com/yuriirochniak/"
-        - name: stackoverflow
-          url: "https://stackoverflow.com/users/6099033/yurii-rochniak?tab=profile"
-        - name: goodreads
-          url: "https://www.goodreads.com/user/show/9974285-yura"
-        - name: email
-          url: "mailto:yrochnyak@gmail.com"
-        - name: RsS
-          url: "index.xml"
+  socialIcons:
+    - name: telegram
+      url: "https://t.me/catops"
+    - name: substack
+      url: "https://catops.substack.com/"
+    - name: github
+      url: "https://github.com/grem11n"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/yrochnyak/"
+    - name: bluesky
+      url: "https://bsky.app/profile/grem1.in"
+    - name: instagram
+      url: "https://www.instagram.com/yuriirochniak/"
+    - name: stackoverflow
+      url: "https://stackoverflow.com/users/6099033/yurii-rochniak?tab=profile"
+    - name: goodreads
+      url: "https://www.goodreads.com/user/show/9974285-yura"
+    - name: email
+      url: "mailto:yrochnyak@gmail.com"
+    - name: RsS
+      url: "index.xml"
 
 taxonomies:
-    category: categories
-    tag: tags
-      # series: series
+  category: categories
+  tag:
+    tags
+    # series: series
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
+  goldmark:
+    renderer:
+      unsafe: true
 
 privacy:
   googleAnalytics:
@@ -139,7 +141,7 @@ privacy:
     privacyEnhanced: true
 
 services:
-    instagram:
-        disableInlineCSS: true
-    twitter:
-        disableInlineCSS: true
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
