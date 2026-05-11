@@ -11,6 +11,9 @@ on:
       - reopened
       - synchronize
 
+env:
+  FILTER_REGEX_EXCLUDE: "^resources/"
+
 permissions: read-all
 jobs:
   build:
