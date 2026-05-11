@@ -12,7 +12,8 @@ on:
       - synchronize
 
 env:
-  FILTER_REGEX_EXCLUDE: "^resources/"
+  STRIP_DEFAULT_WORKSPACE_FOR_REGEX: true
+  FILTER_REGEX_EXCLUDE: "^(resources/|assets/css/)"
 
 permissions: read-all
 jobs:
