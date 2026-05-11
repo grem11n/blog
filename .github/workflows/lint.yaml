@@ -1,0 +1,48 @@
+---
+name: Lint
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+env:
+  STRIP_DEFAULT_WORKSPACE_FOR_REGEX: true
+  FILTER_REGEX_EXCLUDE: "^(resources/|assets/css/)"
+  # BIOME ignores the exclude list
+  VALIDATE_BIOME_FORMAT: false
+  VALIDATE_BIOME_LINT: false
+  # TODO: Fix errors before enable
+  VALIDATE_MARKDOWN: false
+  VALIDATE_MARKDOWN_PRETTIER: false
+  VALIDATE_NATURAL_LANGUAGE: false
+  VALIDATE_SPELL_CODESPELL: false
+
+permissions: read-all
+jobs:
+  build:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Super-linter
+        uses: super-linter/super-linter/slim@9e863354e3ff62e0727d37183162c4a88873df41 # v8.6.0
+        env:
+          # To report GitHub Actions status checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
