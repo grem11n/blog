@@ -113,7 +113,9 @@ For this case, there is another `pre-commit` solution, which inits your modules 
 2. Create a `.github/.pre-commit-tf-lockfiles.yaml` file with the content as below:
 
     > **Note**: We will use this file to auto-update lockifles in the CI later. `.github/` is present in the file path just to hide it from regular users and keep it as close as possible to `.github/workflows/`
+
 <!-- textlint-disable -->
+
     ```yaml
     repos:
       - repo: https://github.com/antonbabenko/pre-commit-terraform
@@ -136,7 +138,9 @@ For this case, there is another `pre-commit` solution, which inits your modules 
           #   files: '^path/to/your/terraform/root/folder/[a-c]'
           #   exclude: '(\.)?modules/'
     ```
+
 <!-- textlint-enable -->
+
 3. If you have huge repo - uncomment this line and specify the correct `# files: '^path/to/your/terraform/root/folder/[a-c]'`  
 
     `files` and `exclude` uses a Python `re.search` regular expressions ([docs](https://pre-commit.com/#regular-expressions)). By specifying `[a-c]` at the end, we can limit the number of directories that should be processed by a single run
