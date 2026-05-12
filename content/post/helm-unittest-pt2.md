@@ -138,7 +138,7 @@ There are two conditional parts in the demo chart:
 
 2. Applies a DataDog Monitor custom resource, if `.Values.monitoring.enabled` is `true`
 
-The test code resides in the [`tests/`](https://github.com/grem11n/talk-props/tree/main/fw-days-devops-2024/fw-demo/tests) directory of our chart. This is a requirement of Unittest. I won't copy-paste the test code here, because it is too verbose. Here are scenarios we want to test:
+The test code resides in the [`tests/`](https://github.com/grem11n/talk-props/tree/main/fw-days-devops-2024/fw-demo/tests) directory of our chart. This is a requirement of Unittest. I won't copypaste the test code here, because it is too verbose. Here are scenarios we want to test:
 
 1. Autoscaling is disabled, thus an HPA resource is absent and the number of replicas is set to a fixed value.
 

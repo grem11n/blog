@@ -27,7 +27,7 @@ I have redesigned my blog recently. Well, not really redesigned, rather applied 
 
 Supporting a theme is hard. I’m not a web developer. I have some idea about CSS and I can use a bunch of examples on the Web to create something on my own, but it takes a lot of effort. And this is not the effort I would like to put.
 
-I’ve inherited the previous theme from a random guy on the Internet. I found this theme just like I found the current one. I changed a lot of things back then. At some point, I made those changes less horrible and decided to contribute back and… Found that the original repository is archived. So, I had no choice but just [leave it on GitHub](https://github.com/grem11n/hugo-gentoo-theme). Feel free to fork it on your own, since I’m not very interested in developing it further.
+I’ve inherited the previous theme from a random guy on the internet. I found this theme just like I found the current one. I changed a lot of things back then. At some point, I made those changes less horrible and decided to contribute back and… Found that the original repository is archived. So, I had no choice but just [leave it on GitHub](https://github.com/grem11n/hugo-gentoo-theme). Feel free to fork it on your own, since I’m not very interested in developing it further.
 
 Yet, here are a few things that I wanted to update:
 
@@ -42,7 +42,7 @@ The second task is not that trivial! I would have needed to create a brand new c
 
 ## Public Themes for the Rescue!
 
-As you can imagine there are plenty of themes for Hugo available over the Internet. I didn’t even dare to search on GitHub, because there are too many of them. I used [Hugo Themes Free](https://hugothemesfree.com/) website, which has a pretty verbose name, I must say. The one thing I liked the most about a dedicated website is that you can see a screenshot right away. It simplifies search a lot.
+As you can imagine there are plenty of themes for Hugo available over the internet. I didn’t even dare to search on GitHub, because there are too many of them. I used [Hugo Themes Free](https://hugothemesfree.com/) site, which has a pretty verbose name, I must say. The one thing I liked the most about a dedicated site is that you can see a screenshot right away. It simplifies search a lot.
 
 My goal was to find a theme I like and deliberately withhold myself from any tweaks. I want to configure it once and leave it as is for a couple of years. If anything changes about that theme - fine, I’ll pick it up from the upstream. Otherwise, I don’t want to bother.
 
@@ -50,7 +50,7 @@ The main downside of public themes is that sometimes you need minor tweaks which
 
 Thus, I found a fork that fixes image rendering a bit and makes this public theme shine! I use [Daniel F. Dickinson’s fork](https://github.com/danielfdickinson/adityatelange-hugo-PaperMod/tree/pr-add-thumbnail-list-pages) of the popular [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme for Hugo.
 
-I also looked into this [Card style theme.](https://github.com/CaiJimmy/hugo-theme-stack) However, the rendering of single pages looks neater on the PaperMod. Although, I must admit that “Card Style” looks like a more mature website. It has dynamic image cropping, thumbnail preview out of the box, widgets, etc.
+I also looked into this [Card style theme.](https://github.com/CaiJimmy/hugo-theme-stack) However, the rendering of single pages looks neater on the PaperMod. Although, I must admit that “Card Style” looks like a more mature site. It has dynamic image cropping, thumbnail preview out of the box, widgets, etc.
 
 ## What About the Content?
 

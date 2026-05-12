@@ -113,7 +113,7 @@ For this case, there is another `pre-commit` solution, which inits your modules 
 2. Create a `.github/.pre-commit-tf-lockfiles.yaml` file with the content as below:
 
     > **Note**: We will use this file to auto-update lockifles in the CI later. `.github/` is present in the file path just to hide it from regular users and keep it as close as possible to `.github/workflows/`
-
+<!-- textlint-disable -->
     ```yaml
     repos:
       - repo: https://github.com/antonbabenko/pre-commit-terraform
@@ -136,10 +136,10 @@ For this case, there is another `pre-commit` solution, which inits your modules 
           #   files: '^path/to/your/terraform/root/folder/[a-c]'
           #   exclude: '(\.)?modules/'
     ```
-
+<!-- textlint-enable -->
 3. If you have huge repo - uncomment this line and specify the correct `# files: '^path/to/your/terraform/root/folder/[a-c]'`  
 
-    `files` and `exclude` uses a Python `re.search` regex ([docs](https://pre-commit.com/#regular-expressions)). By specifying `[a-c]` at the end, we can limit the number of directories that should be processed by a single run
+    `files` and `exclude` uses a Python `re.search` regular expressions ([docs](https://pre-commit.com/#regular-expressions)). By specifying `[a-c]` at the end, we can limit the number of directories that should be processed by a single run
 
 4. Run the command and chill for a couple of minutes
 
@@ -179,7 +179,7 @@ For this case, there is another `pre-commit` solution, which inits your modules 
 
     If some lockfiles do not have all the required hashes, check the logs. In most cases, it means that you still use something from the Terraform 0.11, which does not support one of the specified platforms (in my case `-platform=darwin_arm64` for `hashicorp/template` and `mumoshu/helmfile`)
 
-4. If you also encounter these problems, modify `.github/.pre-commit-tf-lockfiles.yaml` and rerun `pre-commit` until everything is Ok:
+4. If you also encounter these problems, modify `.github/.pre-commit-tf-lockfiles.yaml` and rerun `pre-commit` until everything is OK:
 
     ```yaml
      - id: terraform_providers_lock
@@ -235,7 +235,7 @@ Once you have all the lockfiles, it's time to automate their updates.
     * Remove `files` sections in the `terraform_providers_lock` hooks
 
     In the end, you will get something like this:
-
+<!-- textlint-disable -->
     ```yaml
     repos:
       - repo: https://github.com/antonbabenko/pre-commit-terraform
@@ -280,7 +280,7 @@ Once you have all the lockfiles, it's time to automate their updates.
                 |^terraform/helmfiles/
               )
     ```
-
+<!-- textlint-enable -->
 2. Add a GitHub workflow, which installs all the dependencies and run `pre-commit run` every Monday. It creates a new PR in the Renovate style:
 
     ```yaml

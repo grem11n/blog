@@ -20,14 +20,14 @@ A typical production cluster has a three-layer structure. There are Kubernetes c
 
 {{< figure src="/img/posts/k8s-backup/cluster-layers.png" alt="cluster layers scheme" caption="cluster layers" >}}
 
-Those layers are usually managed separately and have a different lifecycle. For example, you can use a managed Kubernetes cluster, then install core plugins with [Helmfile](https://github.com/roboll/helmfile), and manage your production services using Argo stack. The lifecycle is different for each layer in this scheme. Kubernetes has a few major releases each year with occasional patches.  Core plugins may have releases each month or so. Finally, you may release your end-user applications daily or even a few times a day. It means that the procedures for core components and your apps are different, even if you use the same toolset.
+Those layers are usually managed separately and have a different lifecycle. For example, you can use a managed Kubernetes cluster, then install core plugins with [Helmfile](https://github.com/roboll/helmfile), and manage your production services using Argo stack. The lifecycle is different for each layer in this scheme. Kubernetes has a few major releases each year with occasional patches.  Core plugins may have releases each month or so. Finally, you may release your end user applications daily or even a few times a day. It means that the procedures for core components and your apps are different, even if you use the same toolset.
 
 ## Let's Talk About Automation First
 We have figured out that each layer has its own lifecycle, but there is one more thing to talk about before we switch to backups - automation. 
 
 Automation is a crucial part of any modern infrastructure. From good old configuration management to modern cloud CDKs, the industry was always striving to automate as many routines as possible. Phrases like "A good sysadmin has nothing to do", - or "To automate yourself out from your job", - didn't appear out of the blue.
 
-Also, each cluster layer may have a different degree of automation. Of course, it's cool, when you can re-create a whole stack with a single command. Unfortunately, I observed very few such configurations in practice. Usually, there is an automated CI/CD process for end-user applications and semi-automated core plugins. Core plugins may use the same delivery tools, but a manual testing process. Cluster rollouts are either handed over to a vendor or presented as a list of documented steps.
+Also, each cluster layer may have a different degree of automation. Of course, it's cool, when you can re-create a whole stack with a single command. Unfortunately, I observed very few such configurations in practice. Usually, there is an automated CI/CD process for end user applications and semi-automated core plugins. Core plugins may use the same delivery tools, but a manual testing process. Cluster rollouts are either handed over to a vendor or presented as a list of documented steps.
 
 Also, each layer accommodates different risks to the whole system. It's less critical to lose a single microservice than have an issue with the ingress controller. At the same time, it's easier to redeploy an ingress controller, rather than remediate a cluster after an unsuccessful upgrade.
 
