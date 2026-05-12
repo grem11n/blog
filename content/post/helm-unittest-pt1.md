@@ -150,7 +150,7 @@ Now, to the serious questions. Is it enough to have only local unit test to ensu
 
 Helm Unittest is a young project and it has its flaws. For example, it doesn't work well with nested lists. In such cases, we were falling back to "golden files". Luckily, Helm Unittest allows golden testing as well. So, we could leverage the same tool for various scenarios.
 
-Although, our "test pyramid" has helped us to catch errors early on, it still doesn't guarantee that things would run smoothly in a real cluster. Also, it doesn't guarantee that the cluster itself works fine. We had other lines of defense, such as a dummy app that was mimicking a real application in a cluster. We also had E2E and stress tests for Kubernetes clusters themselves. Yet, this is a story for another time.
+Although, our "test pyramid" has helped us to catch errors early on, it still doesn't guarantee that things would run smoothly in a real cluster. Also, it doesn't guarantee that the cluster itself works fine. We had other lines of defense, such as a dummy app that was mimicking a real application in a cluster. We also had end-to-end and stress tests for Kubernetes clusters themselves. Yet, this is a story for another time.
 
 ## Conclusion
 

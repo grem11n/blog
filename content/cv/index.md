@@ -13,7 +13,7 @@ _[Download the PDF](https://grem1.in/files/Yurii_Rochniak_CV.pdf)_
 * yrochnyak@gmail.com
 * LinkedIn: [yrochnyak](https://www.linkedin.com/in/yrochnyak/)
 * GitHub: [https://github.com/grem11n](https://github.com/grem11n)
-* Or use social buttons in header or footer of this website
+* Or use social buttons in header or footer of this site
 ---
 
 ## Bio
@@ -47,7 +47,7 @@ Go, Python, Bash, TypeScript, AWS, Kubernetes, Jenkins, Groovy, GitHub / GitHub 
 #### July 2019 - March 2024: [N26](https://n26.com) (Online bank) - Lead SRE
 - Helped to scale the platform team to more than 20 engineers by participating in the interview process.
 - Introduced **SLO**s for **Kubernetes** components (add-ons).
-- Automated a multistep compliance process with a **Python** and later a **Go** CLI tool. The execution time for the processes decreased from the whole day of manual work to under 3 hours of following an easy runbook.
+- Automated a multistep compliance process with a **Python** and later a **Go** command-line tool. The execution time for the processes decreased from the whole day of manual work to under 3 hours of following an easy runbook.
   ● Decreased the lead time to create a full-functional **Kubernetes** cluster to ~30 minutes and a single command by creating a CLI cluster-management tool in **Go**.
   ● Reduced operational burden for product engineers by abstracting lower-level configuration with **Kubernetes operators**.
   ● Reduced the footprint of internal tests for **Helm charts** to a couple lines of code per test by creating an internal library to test charts with **Go** and **Terratest**, and later **Helm Unittest**.
@@ -83,7 +83,7 @@ Go, Python, Bash, TypeScript, AWS, Kubernetes, Jenkins, Groovy, GitHub / GitHub 
 - [AWS VPC Peering Terraform Module](https://github.com/grem11n/terraform-aws-vpc-peering  ) that people actually use in production.
 - [AWS Cost Exporter](https://github.com/grem11n/cost-exporter) - a tool to export AWS Cost Explorer data in Prometheus format.
   Potentially extensible to other formats and cloud providers.
-- [S3bc](https://github.com/grem11n/s3bc) - just an experiment of writing a CLI tool in Go with Cobra and Viper.
+- [S3bc](https://github.com/grem11n/s3bc) - just an experiment of writing a command-line tool in Go with Cobra and Viper.
 - Telegram channel about DevOps: https://t.me/catops.
 - External articles:
   - [Lambda@Edge: run your code at CloudFront](https://bit.ly/2LiRjOJ) (eng)
