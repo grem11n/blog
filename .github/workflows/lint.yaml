@@ -22,6 +22,8 @@ env:
   VALIDATE_MARKDOWN_PRETTIER: false
   VALIDATE_NATURAL_LANGUAGE: false
   VALIDATE_SPELL_CODESPELL: false
+  VALIDATE_HTML: false
+  VALIDATE_HTML_PRETTIER: false
 
 permissions: read-all
 jobs:
