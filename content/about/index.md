@@ -23,7 +23,6 @@ Originally from Kyiv. For more than 5 years live in Berlin.
 If you have any questions or feedback, feel free to contact me on:
 
 * Write me an email to: yrochnyak@gmail.com
-* Twitter: [@grem11n](https://twitter.com/grem11n)
 * LinkedIn: [yrochnyak](https://www.linkedin.com/in/yrochnyak/)
 * Telegram: [@grem1in](https://t.me/grem1in)
 

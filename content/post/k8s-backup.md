@@ -62,6 +62,4 @@ Instead of a conclusion, I put a tl;dr that summarizes everything I've just said
 4. I prefer to invest time and resources into functional GitOps in Kubernetes environments, rather than backups and their validation. This is just my opinion and I'm fully aware that this is way harder than simply [install Velero into a cluster](https://grem1.in/post/velero/).
 5. Or rather 4.5. It's perfectly fine to have backups before you have GitOps in your organization. In any case, it's much better than nothing.
 
-_I hope, you enjoyed the reading! Comments in this blog are disabled forever. If you have any questions or ideas, feel free to reach me out in [Twittter](https://twitter.com/grem11n) or [Telegram](https://t.me/grem1in)!_ 
-
 **Happy New Year, y'all!**
