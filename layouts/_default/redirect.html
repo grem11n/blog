@@ -1,0 +1,25 @@
+{{- $url := .Params.redirectURL -}}
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default "en" }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }}</title>
+  {{- with $url }}
+  <meta http-equiv="refresh" content="0; url={{ . }}">
+  <link rel="canonical" href="{{ . }}">
+  {{- end }}
+  <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+  {{- with $url }}
+  <p>Redirecting to <a href="{{ . }}">{{ . }}</a>&hellip;</p>
+  <script>window.location.replace({{ . }});</script>
+  {{- else }}
+  <p>Missing <code>redirectURL</code> in front matter.</p>
+  {{- end }}
+</body>
+
+</html>
