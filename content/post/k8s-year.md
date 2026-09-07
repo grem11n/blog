@@ -38,7 +38,7 @@ Managed solutions to the rescue!
 ----
 There are plenty of managed solutions for Kubernetes nowadays. All the major cloud providers have them. Of course, a managed solution limits your freedom: you cannot change API server configuration, probably change the network plugin, etc. But here is the trick! _**Running your own control plane likely won't add any business value**_. Unless, you have some specific scenario and you understand what you're doing.
 
-{{< tweet user="jessitron" id="1059632684098478080" >}}
+{{< x user="jessitron" id="1059632684098478080" >}}
 
 Speaking further about the value. You don't want just a cluster on its own. Eventually, you will need things like Ingress controller, monitoring & logging stack (including monitoring & logging of the cluster itself), [cluster-autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler), perhaps even a service mesh, etc. There are tons of tutorials on how to set up all of these. A lot of things could be installed with a simple `helm install ...` command, but there is a catch!
 
