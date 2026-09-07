@@ -7,4 +7,6 @@ cover:
   image: "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*PR2N4VyRCSqKi5ZJSZAapw.png"
 ---
 
-Placeholder text
+Infrastructure-as-code provides many benefits beyond the reproducibility only. In this article,
+we’ll walk through the infrastructure-as-code setup at Preply, how it came to be, decisions we
+made, and challenges we encountered along the way.
