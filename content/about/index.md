@@ -1,5 +1,5 @@
 ---
-date: "2016-11-05T21:05:33+05:30"
+date: "2026-09-10"
 title: "➜ ~ whoami"
 draft: false
 image: https://avatars1.githubusercontent.com/u/15696488?v=4
