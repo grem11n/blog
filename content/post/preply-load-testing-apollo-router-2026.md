@@ -5,6 +5,8 @@ title: "Load Testing Apollo Router"
 date: "2026-08-27"
 cover:
   image: "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*XGzFMRY_H-DVcp7mpmXv5w.png"
+categories: ["Tech"]
+tags: ["en", "k8s", "graphql", "load_testing", "rust", "medium"]
 ---
 
 How we ran a load test for Apollo Router to figure out its limitations and performance gains

@@ -5,6 +5,8 @@ title: "How do we use Terraform at Preply"
 date: "2026-01-27"
 cover:
   image: "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*PR2N4VyRCSqKi5ZJSZAapw.png"
+categories: ["Tech"]
+tags: ["en", "terraform", "medium"]
 ---
 
 Infrastructure-as-code provides many benefits beyond the reproducibility only. In this article,
